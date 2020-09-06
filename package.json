@@ -625,7 +625,7 @@
     },
     "ytdl-core": "^3.2.2"
   }
-}
+
 
   "name": "Bean",
   "version": "1.0.0",
@@ -645,4 +645,4 @@
   "devDependencies": {
     "nodemon": "^1.18.9"
   }
-
+  }
