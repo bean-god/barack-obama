@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
-const fs = require("fs")
 const { prefix, token } = require("./config.json");
 const ytdl = require("ytdl-core");
 const queue = new Map();
@@ -10,6 +9,15 @@ var fuckme;
 var fuckme2;
 var endit = 0;
 var dotime = 0;
+const fs = require("fs")
+fs.readdir("./events/", (err, files) => {
+  files.forEach(file => {
+    const eventHandler = require(`./events/${file}`)
+    const eventName = file.split(".")[0]
+    client.on(eventName, (...args) => eventHandler(client, ...args))
+  })
+})
+client.login(token);
 
 
 
@@ -151,15 +159,6 @@ function play(guild, song) {
     };
 })();
 
-/* function replay() {
-    delay(function(){
-    //serverQueue.songs.shift();
-    dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    serverQueue.textChannel.send(`Start playing: **${song.title}**`);
-    serverQueue.connection.play(ytdl(song.url))
-}, 3000 ); // end delay
-}*/
-
   const dispatcher = serverQueue.connection
     .play(ytdl(song.url))
     .on("finish", () => {
@@ -170,6 +169,7 @@ function play(guild, song) {
     .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Playing: **${song.title}**`);
+
 }
 
 
@@ -193,16 +193,8 @@ function play(guild, song) {
 
 
 
-fs.readdir("./events/", (err, files) => {
-  files.forEach(file => {
-    const eventHandler = require(`./events/${file}`)
-    const eventName = file.split(".")[0]
-    client.on(eventName, (...args) => eventHandler(client, ...args))
-  })
-})
 
 
-client.login(token);
 
 
 

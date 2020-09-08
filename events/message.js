@@ -529,4 +529,4 @@ if(anger == 0){
 	anger = 0;
 	} else{warning()}
 	}*/
-}
+}}
