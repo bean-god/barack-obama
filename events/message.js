@@ -163,7 +163,7 @@ function obama() {
 	case 2:
 	message.channel.send("That's it.")
 	message.member.edit({
-      nick: 'Cheeser',
+      nick: 'Nigger',
     })
 	anger = 0;
 	reset = 0;
