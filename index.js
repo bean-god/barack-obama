@@ -3,12 +3,6 @@ const client = new Discord.Client()
 const { prefix, token } = require("./config.json");
 const ytdl = require("ytdl-core");
 const queue = new Map();
-var loop = 0;
-var triggered = false;
-var fuckme;
-var fuckme2;
-var endit = 0;
-var dotime = 0;
 const fs = require("fs")
 fs.readdir("./events/", (err, files) => {
   files.forEach(file => {
@@ -18,6 +12,12 @@ fs.readdir("./events/", (err, files) => {
   })
 })
 client.login(token);
+var loop = 0;
+var triggered = false;
+var fuckme;
+var fuckme2;
+var endit = 0;
+var dotime = 0;
 
 
 
