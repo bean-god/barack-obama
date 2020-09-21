@@ -8,6 +8,19 @@ if(message.author.bot){return}
 const guild = message.guild;
 const member = message.member;
 
+
+if(message.content === `${prefix}help`) {
+const help = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Commands')
+	.addField(`Pizza`, `${prefix}pizza \n ${prefix}code`)
+	.addField(`Music`, `${prefix}play \n ${prefix}loop \n ${prefix}stop`)
+	.addField(`Everything else`, `${prefix}speech \n ${prefix}quote \n ${prefix}obamafact \n ${prefix}recipe \n ${prefix}bread \n ${prefix}cheese`)
+	message.channel.send(help)}
+
+
+
+
 function punishment() {
 	var p = Math.floor(Math.random()*4)+1;
 	switch(p) {
