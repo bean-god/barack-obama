@@ -1,7 +1,58 @@
+const Discord = require("discord.js")
+const client = new Discord.Client()
 const { prefix } = require("./config.json");
 var anger = 0;
 var reset = 0;
 module.exports = (client, message) => {
+if(message.author.bot){return}
+const guild = message.guild;
+const member = message.member;
+
+function punishment() {
+	var p = Math.floor(Math.random()*4)+1;
+	switch(p) {
+		case 1:
+		message.channel.send("That's it. You are going to Brazil.")
+		Brazil();
+		break;
+		case 2:
+		message.channel.send("That's it. You are going to the sex dungeon.")
+		SexD();
+		break;
+		case 3:
+
+		break;
+		case 4:
+
+		break;
+		default:
+		message.channel.send("You are lucky.")
+	}
+}
+
+CBrazil();
+CSexD();
+/*Template for punishment role 
+var name = "name";
+function Name() { let role = message.guild.roles.cache.find(role => role.name === `name`); var roleID = role.id; member.roles.set([`${roleID}`]).catch(console.error); }
+function CName() { let role = message.guild.roles.cache.find(role => role.name === `name`); if (role) {return}; role = guild.roles.create({data:{name: `name`, color: 'GREEN', hoist: 'true'
+.catch(console.log) }
+*/
+function SexD() { let role = message.guild.roles.cache.find(role => role.name === `Sex Dungeon`); var roleID = role.id; member.roles.set([`${roleID}`]).catch(console.error); }
+function CSexD() { let role = message.guild.roles.cache.find(role => role.name === `Sex Dungeon`); if (role) {return}; role = guild.roles.create({data:{name: `Sex Dungeon`, color: 'RED', hoist: 'true'}})
+.then(console.log)
+.catch(console.log) }
+
+function Brazil() { let role = message.guild.roles.cache.find(role => role.name === "Brazil"); var roleID = role.id; member.roles.set([`${roleID}`]).catch(console.error); }
+function CBrazil() { let role = message.guild.roles.cache.find(role => role.name === "Brazil"); if (role) {return}; role = guild.roles.create({data:{name: 'Brazil', color: 'GREEN', hoist: 'true'}})
+.then(console.log)
+.catch(console.log) 
+}
+
+if(message.content===`as`) {punishment()}
+
+
+
 reset += 1;
 if(reset >= 10){if(anger >= 0){anger -= 1}}
 if(message.content === `${prefix}anger`){message.channel.send(`${anger}`)}
@@ -103,7 +154,7 @@ function obama() {
 	reset = 0;
     break;
 	case 2:
-	message.channel.send("That's it.")
+	punishment();
 	message.member.edit({
       nick: 'Nigger',
     })
@@ -204,4 +255,672 @@ if(anger == 0){
 	anger = 0;
 	} else{warning()}
 	}*/
+
+
+var pizzaStage = 0;
+var pizzaCode;
+var pizzaChoice1 = "undefined";
+var pizzaChoice2 = "undefined";
+var pizzaChoice3 = "undefined";
+var pizzaChoice4 = "undefined";
+var codeChoice1=0;
+var codeChoice2=0;
+var codeChoice3=0;
+var codeChoice4=0;
+var finalstats = {health:`${health}`, damage:`${damage}`, speed:`${speed}`};
+var health = 4;// -= damage
+var damage = 2;// -= health
+var speed = 1;// determines who attacks first
+var cloned = false;
+function pwait(iMilliSeconds) {
+    var counter= 0
+        , start = new Date().getTime()
+        , end = 0;
+    while (counter < iMilliSeconds) {
+        end = new Date().getTime();
+        counter = end - start;
+    }
+}
+function reset() {cloned = false; pizzaStage = 0; pizzaChoice1 = "undefined"; pizzaChoice2 = "undefined"; pizzaChoice3 = "undefined"; pizzaChoice4 = "undefined"; pizzaCode = "undefined"; codeChoice1 = 0; codeChoice2 = 0; codeChoice3 = 0; codeChoice4 = 0; speed = 1; damage = 2; defense = 2; health = 4; finalstats = {health:`${health}`, damage:`${damage}`, speed:`${speed}`}}
+function statReset() {speed = 1; damage = 2; defense = 2; health = 4}
+// ....................................
+
+
+
+
+
+
+
+
+
+
+if (message.content === "!recipe"){
+	if(y==1){message.channel.send("How to make omelets! 1. Place the pieces of paper along the side of the omelette and roll them out as much as they will go and put them into the top drawer of your box with a rolled-up paper towel wrapped around them. 2. Take the paper towels and fold them over to form the lid of your box. 2. Place the omelettes, rolled out and glued together along the sides of the box. 2. Gently tilt the box so that the omelettes are up and down each side. 2. Put the omelettes on the lid of the box and turn them to seal. 2. You have a custom designed and cut omelette that you can put on any box you want!! 2. You can also customize these to match your box! 2. Make sure to give the paper towels to your librarians office to keep them from getting wet or wet out. Enjoy!")}else
+	if(y==2){message.channel.send("How to make triple chocolate brownies: Step 1. Combine the flour, sugar, baking soda, salt and eggs in a bowl. Add the milk, milk mixture and cornstarch mixture and whisk until the dough pulls away from the sides of the bowl. Try to hold it by the sides with your hands. Do not force it. Step 2. Using your hands, form the dough into discs, about 3 mm thick. Wrap each disc around your hands and pinch them together to form into chocolate cookie cutter. Bake at 350 degrees for 35-40 minutes. Bake as directed. Step 3. Once the cookie cutter turns golden brown and has set on top of the cupcake, put into the refrigerator for 10 minutes, then remove from the refrigerator. After the second cookie cutter has set on top of the cupcake, use a fork to remove the chocolate brownie from the refrigerator to clean and cool completely. Step 4. Once cool, frost the chocolate brownies and enjoy! Tips and notes: I would not recommend this as an all-purpose recipe. You can replace the egg whites with your favorite egg whites, but Id be interested in hearing feedback on that.")}else
+	if(y==3){message.channel.send("How to make the quadruple chocolate brownie cake: Step 1: Whisk the flour, baking powder, salt, cocoa powder and milk together in a medium-sized bowl. Stir in the egg whites and mix until smooth and smooth. Add the milk and mix until incorporated. Add the dry ingredients and mix until incorporated. Turn it into the wet ingredients and add about half the flour mixture until all the dry ingredients are incorporated. Step 2: Use a large spatula to fold the dough into the batter. Using a 1 1/2 cup spoon, pour the batter into the cupcake tin. Bake for about 25 minutes. Note: If the batter is so wet that it falls apart, add a generous amount of water to make sure it doesnt burn. Step 3: Use a knife to top each cupcake with some chocolate filling. Allow them to cool completely. Serve warm.")}else 
+	if(y==4){message.channel.send("How to make Banana Bread Step 1. Combine banana slices with bread yeast. Step 2. Combine water and salt in blender. Step 3. Process until blended and smooth. Pour into a 1/2 cup loaf pan and bake for 15 minutes. Let stand, about 30 minutes. Step 4. Drain and place inside a saucepan with ice, cover. Step 5. Place ice in refrigerator and allow to thaw, about 5 minutes.  Step 6. Cover and chill in an air-tight container up to 2 months. Step 7. Cool and transfer to an air-tight container.  Step 8. When ready to use, take out 2 tablespoons of mixture and add the remaining remaining 3 tablespoons.  Serve with sweet bread crumbs and enjoy!")}else
+	if(y==5){message.channel.send("How to make Pizza. Step 1. Take a pizza dough and cut the dough into 1 inch squares. Step 2. Add 2 tsp of olive oil and fry the 1 inch squares in 2 Tbsp of olive oil for 10 minutes. Step 3. Remove from the pan and set aside. Step 4. With a spatula, spread the olive oil over the 1 inch pieces of dough. Step 5. Cut the 1 inch pieces into 1/2 inch long slices, place them on a plate, cover them with paper and let them rest for 20 minutes. Step 6. Take the slices and divide the dough into 6 equal portions. Now take the 6 slices and lay them into the 2 medium size pizza baking dishes, place them in the preheated oven at 40C/180F. Step 7. With a spatula, squeeze the dough together and make an indentation in the middle and press it down with your thumb, making sure that there is no air bubbles. Step 8. Remove the 2 layers of pizza dishes from the oven, place them on a paper towel and leave for about 10 minutes. Step 9. Take a piece of baking paper and smooth the edges of the pizza dishes by using your hands. Step 10. Take the dough and place it in a piping bag with a little bit of tomato paste. Step 11. Pipe a few layers of 1 inch strips of pizza in a little bit of pepperoni filling in the crust.")}else
+	if(y==6){message.channel.send("How to make mozzarella cheese. Creamy mozzarella cheese is a common part of everyday diet. However, if you are not accustomed to adding creaminess to your mozzarella, you will be surprised by the flavor you get when you make this cheese. It is not really cream cheese but something much more creamy than traditional mozzarella cheese. Sieve the mozzarella cheese in a bowl and sprinkle it with the sugar. Beat the sugar and pinchiness together till it becomes a paste. Add the garlic and mix well till it forms breadlike paste. Add the mozzarella cheese and mix well till it becomes a dough. Mix flour, olive oil and salt to make a dough that resembles a crumbly. Cover the makedissle with plastic wrap and let it rise in fridge for a few hours. Remove the dough from the heat. Wash up the dough in clean water and pat dry, let it sit for 10 minutes to soften it and then press it in the pan or your baking sheet. Add the mozzarella and let it sit for 30 minutes and then mix it. Bake at 375 Celsius 150F for 1 hour. When it is finished, flip over and you can enjoy your homemade")}else
+	if(y==7){message.channel.send("1. Peel the bananas 2. Add enough warm peanut sauce for you sauce to dissolve in the milk 2. Mix peanut jelly powder on all sides in your kitchen sink until it all dissolves but it does not go down with hot!   So this should be your warm version too, if they come, keep adding at first B  If possible take it away from boiling in boiling water then refrigerate them and make batter 2. Cut pieces you use into thin stripes, for more color for later when to eat and you know   that to go through all your fresh buns! or maybe use 1 more thin strip of the peanut mix so   to cut a little hole, if it was too hard  please keep some hot and pour into your bowl at first but to take it away the more it cut by this small pie like hole for later To use make banana jam using all fresh jambon !!!!!!!! 2. Fill out a square of peanut dough as it are, with all raw peanut sauce you want from your baking ingredients and set on top Using the leftover jambon as small pie hole you are all good but you will get so cute!! it comes together so pretty when used properly like this !! :D but please not use for dessert, for something so cute, not for buns!!! use a few little slices as for bun but more should have used for more! 2. Use 1 piece the rest into your baking bong!!! , please only to keep the amount in for another ime 2. Cut some small hole from left of edge of peanut dough with butter , this ike very tiny too so use very good scissors! 2. Pour  peanut and mix over to each one side which ones of my 2 holes will go the the other !   You ite are getting to this now or ick you need these holes for ime too much  ive thought ive always needed the hole right at this ids edge i got the perfect place where my pie would fit, but now i wont be in such big hurry to bake more for so much as to cut so the hole could grow as its growing i just want you to notice i just put one inch above edge of my pit!! and no other pieces on them in this isnt the hole its a perfect  perfect to have!   Now I can put a lot as for to this because we have already")}
+}
+
+
+
+
+
+
+
+
+
+	var x = Math.floor(Math.random() * 51)+1;
+	if (message.content.includes("bread")) {
+	if(x == 1) {message.reply(`Toast`)}
+	if(x == 2) {message.reply(`Sourdough`)}
+	if(x == 3) {message.reply(`Brioche`)}
+	if(x == 4) {message.reply(`Banana Bread`)}
+	if(x == 5) {message.reply(`Baguette`)}
+	if(x == 6) {message.reply(`Rye Bread`)}
+	if(x == 7) {message.reply(`Small Bread`)}
+	if(x == 8) {message.reply(`White Bread`)}
+	if(x == 9) {message.reply(`Pita Bread`)}
+	if(x == 10) {message.reply(`Naan Bread`)}
+	if(x == 11) {message.reply(`Ciabatta`)}
+	if(x == 12) {message.reply(`Buns`)}
+	if(x == 13) {message.reply(`Brown Bread`)}
+	if(x == 14) {message.reply(`Whole Wheat`)}
+	if(x == 15) {message.reply(`Focaccia`)}
+	if(x == 16) {message.reply(`Biscuit`)}
+	if(x == 17) {message.reply(`Bagel`)}
+	if(x == 18) {message.reply(`Cornbread`)}
+	if(x == 19) {message.reply(`Lavash`)}
+	if(x == 20) {message.reply(`Tortilla`)}
+	if(x == 21) {message.reply(`Pretzel`)}
+	if(x == 22) {message.reply(`Flatbread`)}
+	if(x == 23) {message.reply(`Challah`)}
+	if(x == 24) {message.reply(`Crouton`)}
+	if(x == 25) {message.reply(`Portugese Sweet Bread`)}
+	if(x == 26) {message.reply(`English Muffin`)}
+	if(x == 27) {message.reply(`Pumpernickel`)}
+	if(x == 28) {message.reply(`Gluten Free`)}
+	if(x == 29) {message.reply(`Llonguet`)}
+	if(x == 30) {message.reply(`Scone`)}
+	if(x == 31) {message.reply(`Chapati`)}
+	if(x == 32) {message.reply(`Texas Toast`)}
+	if(x == 33) {message.reply(`Parotha`)}
+	if(x == 34) {message.reply(`Melonpan`)}
+	if(x == 35) {message.reply(`Bannock`)}
+	if(x == 36) {message.reply(`Matzo`)}
+	if(x == 37) {message.reply(`Matzo`)}
+	if(x == 38) {message.reply(`Breadstick`)}
+	if(x == 39) {message.reply(`Crispbread`)}
+	if(x == 40) {message.reply(`Pandesal`)}
+	if(x == 41) {message.reply(`Boule`)}
+	if(x == 42) {message.reply(`Anpan`)}
+	if(x == 43) {message.reply(`Tiger Bread`)}
+	if(x == 44) {message.reply(`Mantou`)}
+	if(x == 45) {message.reply(`Fougasse`)}
+	if(x == 46) {message.reply(`Kifli`)}
+	if(x == 47) {message.reply(`Panettone`)}
+	if(x == 48) {message.reply(`Barbari Bread`)}
+	if(x == 49) {message.reply(`Multigrain bread`)}
+	if(x == 50) {message.reply(`Teacake`)}
+	if(x == 51) {message.reply(`Bazlama`)}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+if(message.content.includes("cheese") || message.content.includes("Cheese")){
+cheesed = Math.floor(Math.random() * 105) + 1;
+if(cheesed==1){message.channel.send("Gouda")}else
+if(cheesed==2){message.channel.send("American Cheese")}else
+if(cheesed==3){message.channel.send("Pecorino Romano")}else
+if(cheesed==4){message.channel.send("Cheddar")}else
+if(cheesed==5){message.channel.send("Manchengo")}else
+if(cheesed==6){message.channel.send("Smoked Gouda")}else
+if(cheesed==7){message.channel.send("Camembert")}else
+if(cheesed==8){message.channel.send("Provolone")}else
+if(cheesed==9){message.channel.send("Babybel")}else
+if(cheesed==10){message.channel.send("Parmesan")}else
+if(cheesed==11){message.channel.send("Mascarpone")}else
+if(cheesed==12){message.channel.send("Mozzarella")}else
+if(cheesed==13){message.channel.send("Asiago")}else
+if(cheesed==14){message.channel.send("Feta")}else
+if(cheesed==15){message.channel.send("Le Gruyere AOP")}else
+if(cheesed==16){message.channel.send("Gorgonzola")}else
+if(cheesed==17){message.channel.send("Montery Jack")}else
+if(cheesed==18){message.channel.send("Stilton")}else
+if(cheesed==19){message.channel.send("Abbaye de Belloc")}else
+if(cheesed==20){message.channel.send("Taleggio")}else
+if(cheesed==21){message.channel.send("Grana Padano")}else
+if(cheesed==22){message.channel.send("Swiss")}else
+if(cheesed==23){message.channel.send("Boursin")}else
+if(cheesed==24){message.channel.send("Cotija")}else
+if(cheesed==25){message.channel.send("Fontina Val d'Aosta")}else
+if(cheesed==26){message.channel.send("Roquefort")}else
+if(cheesed==27){message.channel.send("Blue Vein Cheese")}else
+if(cheesed==28){message.channel.send("Emmental")}else
+if(cheesed==29){message.channel.send("Grana")}else
+if(cheesed==30){message.channel.send("Jarlsberg")}else
+if(cheesed==31){message.channel.send("Mozzarella di Bufala")}else
+if(cheesed==32){message.channel.send("Pepper Jack")}else
+if(cheesed==33){message.channel.send("Munster")}else
+if(cheesed==34){message.channel.send("Bocconcini")}else
+if(cheesed==35){message.channel.send("Fromage Frais")}else
+if(cheesed==36){message.channel.send("Ricotta Salata")}else
+if(cheesed==37){message.channel.send("Cream Havarti")}else
+if(cheesed==38){message.channel.send("Scamorza")}else
+if(cheesed==39){message.channel.send("Fromage a Raclette")}else
+if(cheesed==40){message.channel.send("Chevre")}else
+if(cheesed==41){message.channel.send("Pecorino")}else
+if(cheesed==42){message.channel.send("Burrata")}else
+if(cheesed==43){message.channel.send("Halloumi")}else
+if(cheesed==44){message.channel.send("Aged Gouda")}else
+if(cheesed==45){message.channel.send("Fresh Mozzarella")}else
+if(cheesed==46){message.channel.send("Colby")}else
+if(cheesed==47){message.channel.send("Limburger")}else
+if(cheesed==48){message.channel.send("Paneer")}else
+if(cheesed==49){message.channel.send("Queso Blanco")}else
+if(cheesed==50){message.channel.send("Port-Salut")}else
+if(cheesed==51){message.channel.send("Adelost")}else
+if(cheesed==52){message.channel.send("Abondance")}else
+if(cheesed==53){message.channel.send("Butterkase")}else
+if(cheesed==54){message.channel.send("Brillat-Savarin")}else
+if(cheesed==55){message.channel.send("Comte")}else
+if(cheesed==56){message.channel.send("Camembert de Normandie")}else
+if(cheesed==57){message.channel.send("Reblochon")}else
+if(cheesed==58){message.channel.send("Longhorn")}else
+if(cheesed==59){message.channel.send("Oaxaca")}else
+if(cheesed==60){message.channel.send("Airag")}else
+if(cheesed==61){message.channel.send("Abbaye du Mont des Cats")}else
+if(cheesed==62){message.channel.send("Saint Agur")}else
+if(cheesed==63){message.channel.send("Cottage Cheese")}else
+if(cheesed==64){message.channel.send("Panela")}else
+if(cheesed==65){message.channel.send("Acapella")}else
+if(cheesed==66){message.channel.send("Red Leicester")}else
+if(cheesed==67){message.channel.send("Abbaye de Citeaux")}else
+if(cheesed==68){message.channel.send("Colby-Jack")}else
+if(cheesed==69){message.channel.send("Caciocavallo")}else
+if(cheesed==70){message.channel.send("Crottin de Chavignol")}else
+if(cheesed==71){message.channel.send("Cream Cheese")}else
+if(cheesed==72){message.channel.send("Zanetti Parmigiano Reggiano")}else
+if(cheesed==73){message.channel.send("Juustoleipa")}else
+if(cheesed==74){message.channel.send("Baby Swiss")}else
+if(cheesed==75){message.channel.send("Le Roule")}else
+if(cheesed==76){message.channel.send("Brie de Meaux")}else
+if(cheesed==77){message.channel.send("Berkswell")}else
+if(cheesed==78){message.channel.send("Fresh Ricotta")}else
+if(cheesed==79){message.channel.send("maasdam")}else
+if(cheesed==80){message.channel.send("Canadian Cheddar")}else
+if(cheesed==81){message.channel.send("Ambert")}else
+if(cheesed==82){message.channel.send("Tommes")}else
+if(cheesed==83){message.channel.send("Cantal")}else
+if(cheesed==84){message.channel.send("Menonita")}else
+if(cheesed==85){message.channel.send("Crescenza")}else
+if(cheesed==86){message.channel.send("Queso Iberico")}else
+if(cheesed==87){message.channel.send("Crema Mexicana")}else
+if(cheesed==88){message.channel.send("Sage Derby")}else
+if(cheesed==89){message.channel.send("Geitost")}else
+if(cheesed==90){message.channel.send("Brick")}else
+if(cheesed==91){message.channel.send("Kasseri")}else
+if(cheesed==92){message.channel.send("Bel Paese")}else
+if(cheesed==93){message.channel.send("Affidelice au Chablis")}else
+if(cheesed==94){message.channel.send("Pave d'Affinois")}else
+if(cheesed==95){message.channel.send("Muenster")}else
+if(cheesed==96){message.channel.send("Wensleydale")}else
+if(cheesed==97){message.channel.send("Romano")}else
+if(cheesed==98){message.channel.send("Fresh Truffles")}else
+if(cheesed==99){message.channel.send("Double Gloucester")}else
+if(cheesed==100){message.channel.send("Juustoleipa")}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(message.content.includes(`${prefix}pizza`)){makePizza()}
+if(message.content.includes(`${prefix}reset`)){reset()}
+if(message.content.includes(`${prefix}code`)){codeRedeem()}
+function clone(){
+	message.channel.clone()
+}
+
+function stage0() {
+message.channel.send(`Choose your Sauce (!pizza (number) )`)
+message.channel.send(`(1) Classic Marinara (+1 health)`)
+message.channel.send(`(2) Chocolate (+1 speed)`)
+message.channel.send(`(3) None (+1 damage)`)
+pizzaStage = 1;
+}
+
+function stage1() {
+if(message.content.includes("1")){pizzaChoice1 = ('Classic Marinara'); message.channel.send(`You chose ${pizzaChoice1}`); health+=1; codeChoice1 = 1; pizzaStage = 2} else
+if(message.content.includes(`2`)){pizzaChoice1 = ('Chocolate'); message.channel.send(`You chose ${pizzaChoice1}`); damage+=1; codeChoice1 = 2; pizzaStage = 2} else
+if(message.content.includes(`3`)){pizzaChoice1 = ('No sauce'); message.channel.send(`You chose ${pizzaChoice1}`); speed+=1; codeChoice1 = 3; pizzaStage = 2} else {reset(); return}
+message.channel.send(`Choose your Cheese (!pizza (number) )`)
+message.channel.send(`(1) Classic Mozzarella (+1 health)`)
+message.channel.send(`(2) Cheddar (+1 damage)`)
+message.channel.send(`(3) None (+1 speed)`)
+}
+
+function stage2() {
+if(message.content.includes("1")){pizzaChoice2 = ('Classic Mozzarella'); message.channel.send(`You chose ${pizzaChoice2}`); health+=1; codeChoice2 = 1; pizzaStage = 3} else
+if(message.content.includes(`2`)){pizzaChoice2 = ('Cheddar'); message.channel.send(`You chose ${pizzaChoice2}`); damage+=1; codeChoice2 = 2; pizzaStage = 3} else
+if(message.content.includes(`3`)){pizzaChoice2 = ('No Cheese'); message.channel.send(`You chose ${pizzaChoice2}`); speed+=1; codeChoice2 = 3; pizzaStage = 3} else {reset(); return}
+pwait(5000)
+message.channel.send(`Choose your Topping (!pizza (number) )`)
+message.channel.send(`(1) Pepperoni (+1 damage)`)
+message.channel.send(`(2) Chicken (+1 health)`)
+message.channel.send(`(3) Bacon (+1 speed)`)
+}
+
+function stage3() {
+if(message.content.includes("1")){pizzaChoice3 = ('Pepperoni'); message.channel.send(`You chose ${pizzaChoice3}`); damage+=1; codeChoice3 = 1; pizzaStage = 4} else
+if(message.content.includes(`2`)){pizzaChoice3 = ('Chicken'); message.channel.send(`You chose ${pizzaChoice3}`); health+=1; codeChoice3 = 2; pizzaStage = 4} else
+if(message.content.includes(`3`)){pizzaChoice3 = ('Bacon'); message.channel.send(`You chose ${pizzaChoice3}`); speed+=1; codeChoice3 = 3; pizzaStage = 4} else {reset(); return}
+message.channel.send(`Choose your second Topping (!pizza (number) )`)
+message.channel.send(`(1) Onion (+1 health)`)
+message.channel.send(`(2) Olive (+1 speed)`)
+message.channel.send(`(3) Mushroom (+1 damage)`)
+}
+
+function stage4() {
+if(message.content.includes("1")){pizzaChoice4 = ('Onion'); message.channel.send(`You chose ${pizzaChoice4}`); health+=1; codeChoice4 = 1; pizzaStage = 5; stage5()} else
+if(message.content.includes(`2`)){pizzaChoice4 = ('Olive'); message.channel.send(`You chose ${pizzaChoice4}`); speed+=1; codeChoice4 = 2; pizzaStage = 5; stage5()} else
+if(message.content.includes(`3`)){pizzaChoice4 = ('Mushroom'); message.channel.send(`You chose ${pizzaChoice4}`); damage+=1; codeChoice4 = 3; pizzaStage = 5; stage5()} else {reset(); return}
+}
+
+function makePizza() {
+	switch(pizzaStage) {
+	case 0:
+	stage0();
+	pizzaStage = 1;
+	break;
+	case 1:
+	stage1();
+	break;
+	case 2:
+	stage2();
+	break;
+	case 3:
+	stage3();
+	break;
+	case 4:
+	stage4();
+	break;
+	case 5:
+	stage5();
+	break;
+	default:
+	message.channel.send(`Error at stage ${pizzaStage}`)
+	}
+}
+
+
+function setChoiceToString() {
+		if(codeChoice1==1){codeChoice1="Classic Marinara"} 
+		if(codeChoice1==2){codeChoice1="Chocolate"} 
+		if(codeChoice1==3){codeChoice1="None"}
+
+		if(codeChoice2==1){codeChoice2="Classic Mozzarella"} 
+		if(codeChoice2==2){codeChoice2="Cheddar"} 
+		if(codeChoice2==3){codeChoice2="None"}
+
+		if(codeChoice3==1){codeChoice3="Pepperoni"} 
+		if(codeChoice3==2){codeChoice3="Chicken"} 
+		if(codeChoice3==3){codeChoice3="Bacon"}
+
+		if(codeChoice4==1){codeChoice4="Onion"} 
+		if(codeChoice4==2){codeChoice4="Olive"} 
+		if(codeChoice4==3){codeChoice4="Mushroom"}
+		setStringToValue()
+	}
+	function setStringToValue() {
+	//hsd hds dhs hsd
+	statReset();
+		if(codeChoice1=="Classic Marinara"){health += 1}
+		if(codeChoice1=="Chocolate"){speed += 1}
+		if(codeChoice1=="None"){damage += 1}
+
+		if(codeChoice2=="Classic Mozzarella"){health += 1}
+		if(codeChoice2=="Cheddar"){damage += 1}
+		if(codeChoice2=="None"){speed += 1}
+		
+		if(codeChoice3=="Pepperoni"){damage += 1}
+		if(codeChoice3=="Chicken") {health += 1}
+		if(codeChoice3=="Bacon"){speed += 1}
+
+		if(codeChoice4=="Onion"){health += 1}
+		if(codeChoice4=="Olive"){speed += 1}
+		if(codeChoice4=="Mushroom"){damage += 1}
+	}
+	function stage5(){
+	if (cloned) {stageCode(); return};
+	code();
+	const finale = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Your finished pizza')
+	.addFields(
+		{ name: 'Sauce', value: `${pizzaChoice1} ` },
+		{ name: 'Cheese', value: `${pizzaChoice2} ` },
+		{ name: 'First topping', value: `${pizzaChoice3} ` },
+		{ name: 'Second topping', value: `${pizzaChoice4} ` },
+		{ name: 'Stats', value: ` Health: ${health} \n Speed: ${speed} \n Damage: ${damage}` },
+		{ name: 'Pizza Code', value: `${pizzaCode}` } ,
+		{ name: '\u200B', value: '\u200B' }
+	)
+	.setTimestamp()
+	.setFooter('This took a while to make. Do it again?');
+
+	message.channel.send(finale)
+}
+function stageCode(){
+	setChoiceToString();
+	const creet = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Your exported pizza')
+	.addFields(
+		{ name: 'Sauce', value: `${codeChoice1} ` },
+		{ name: 'Cheese', value: `${codeChoice2} ` },
+		{ name: 'First topping', value: `${codeChoice3} ` },
+		{ name: 'Second topping', value: `${codeChoice4} ` },
+		{ name: 'Stats', value: ` Health: ${health} \n Speed: ${speed} \n Damage: ${damage}` },
+		{ name: 'Pizza Code', value: `${pizzaCode}` } ,
+		{ name: '\u200B', value: '\u200B' }
+	)
+	.setTimestamp()
+	.setFooter('This took even longer to make. Do it again?');
+
+	message.channel.send(creet)
+}
+
+
+function codeRedeem() {
+if(message.content.includes(`.1.`)){pizzaCode = 1} else
+if(message.content.includes(`.2.`)){pizzaCode = (2)} else
+if(message.content.includes(`.3.`)){pizzaCode = (3)} else
+if(message.content.includes(`.4.`)){pizzaCode = (4)} else
+if(message.content.includes(`.5.`)){pizzaCode = (5)} else
+if(message.content.includes(`.6.`)){pizzaCode = (6)} else
+if(message.content.includes(`.7.`)){pizzaCode = (7)} else
+if(message.content.includes(`.8.`)){pizzaCode = (7)} else
+if(message.content.includes(`.9.`)){pizzaCode = (9)} else
+if(message.content.includes(`.10.`)){pizzaCode = (10)} else
+if(message.content.includes(`.11.`)){pizzaCode = (11)} else
+if(message.content.includes(`.12.`)){pizzaCode = (12)} else
+if(message.content.includes(`.13.`)){pizzaCode = (13)} else
+if(message.content.includes(`.14.`)){pizzaCode = (14)} else
+if(message.content.includes(`.15.`)){pizzaCode = (15)} else
+if(message.content.includes(`.16.`)){pizzaCode = (16)} else
+if(message.content.includes(`.17.`)){pizzaCode = (17)} else
+if(message.content.includes(`.18.`)){pizzaCode = (18)} else
+if(message.content.includes(`.19.`)){pizzaCode = (19)} else
+if(message.content.includes(`.20.`)){pizzaCode = (20)} else
+if(message.content.includes(`.21.`)){pizzaCode = (21)} else
+if(message.content.includes(`.22.`)){pizzaCode = (22)} else
+if(message.content.includes(`.23.`)){pizzaCode = (23)} else
+if(message.content.includes(`.24.`)){pizzaCode = (24)} else
+if(message.content.includes(`.25.`)){pizzaCode = (25)} else
+if(message.content.includes(`.26.`)){pizzaCode = (26)} else
+if(message.content.includes(`.27.`)){pizzaCode = (27)} else
+if(message.content.includes(`.28.`)){pizzaCode = (28)} else
+if(message.content.includes(`.29.`)){pizzaCode = (29)} else
+if(message.content.includes(`.30.`)){pizzaCode = (30)} else
+if(message.content.includes(`.31.`)){pizzaCode = (31)} else
+if(message.content.includes(`.32.`)){pizzaCode = (32)} else
+if(message.content.includes(`.33.`)){pizzaCode = (33)} else
+if(message.content.includes(`.34.`)){pizzaCode = (34)} else
+if(message.content.includes(`.35.`)){pizzaCode = (35)} else
+if(message.content.includes(`.36.`)){pizzaCode = (36)} else
+if(message.content.includes(`.37.`)){pizzaCode = (37)} else
+if(message.content.includes(`.38.`)){pizzaCode = (38)} else
+if(message.content.includes(`.39.`)){pizzaCode = (39)} else
+if(message.content.includes(`.40.`)){pizzaCode = (40)} else
+if(message.content.includes(`.41.`)){pizzaCode = (41)} else
+if(message.content.includes(`.42.`)){pizzaCode = (42)} else
+if(message.content.includes(`.43.`)){pizzaCode = (43)} else
+if(message.content.includes(`.44.`)){pizzaCode = (44)} else
+if(message.content.includes(`.45.`)){pizzaCode = (45)} else
+if(message.content.includes(`.46.`)){pizzaCode = (46)} else
+if(message.content.includes(`.47.`)){pizzaCode = (47)} else
+if(message.content.includes(`.48.`)){pizzaCode = (48)} else
+if(message.content.includes(`.49.`)){pizzaCode = (49)} else
+if(message.content.includes(`.50.`)){pizzaCode = (50)} else
+if(message.content.includes(`.51.`)){pizzaCode = (51)} else
+if(message.content.includes(`.52.`)){pizzaCode = (52)} else
+if(message.content.includes(`.53.`)){pizzaCode = (53)} else
+if(message.content.includes(`.54.`)){pizzaCode = (54)} else
+if(message.content.includes(`.55.`)){pizzaCode = (55)} else
+if(message.content.includes(`.56.`)){pizzaCode = (56)} else
+if(message.content.includes(`.57.`)){pizzaCode = (57)} else
+if(message.content.includes(`.58.`)){pizzaCode = (58)} else
+if(message.content.includes(`.59.`)){pizzaCode = (59)} else
+if(message.content.includes(`.60.`)){pizzaCode = (60)} else
+if(message.content.includes(`.61.`)){pizzaCode = (61)} else
+if(message.content.includes(`.62.`)){pizzaCode = (62)} else
+if(message.content.includes(`.63.`)){pizzaCode = (63)} else
+if(message.content.includes(`.64.`)){pizzaCode = (64)} else
+if(message.content.includes(`.65.`)){pizzaCode = (65)} else
+if(message.content.includes(`.66.`)){pizzaCode = (66)} else
+if(message.content.includes(`.67.`)){pizzaCode = (67)} else
+if(message.content.includes(`.68.`)){pizzaCode = (68)} else
+if(message.content.includes(`.69.`)){pizzaCode = (69)} else
+if(message.content.includes(`.70.`)){pizzaCode = (70)} else
+if(message.content.includes(`.71.`)){pizzaCode = (71)} else
+if(message.content.includes(`.72.`)){pizzaCode = (72)} else
+if(message.content.includes(`.73.`)){pizzaCode = (73)} else
+if(message.content.includes(`.74.`)){pizzaCode = (74)} else
+if(message.content.includes(`.75.`)){pizzaCode = (75)} else
+if(message.content.includes(`.76.`)){pizzaCode = (76)} else
+if(message.content.includes(`.77.`)){pizzaCode = (77)} else
+if(message.content.includes(`.78.`)){pizzaCode = (78)} else
+if(message.content.includes(`.79.`)){pizzaCode = (79)} else
+if(message.content.includes(`.80.`)){pizzaCode = (80)} else
+if(message.content.includes(`.81.`)){pizzaCode = (81)} else {
+message.channel.send("Please include your pizza number inbetween two periods, like this: \n .64.")
+return}
+codeSet()
+if (!cloned) {
+cloned = true;
+pizzaStage = 5;
+}
+}
+
+function codeSet() {
+	if(pizzaCode==1){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==2){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==3){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==4){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==5){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==6){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==7){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==8){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==9){ codeChoice1 = (1); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==10){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==11){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==12){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==13){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==14){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==15){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==16){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==17){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==18){ codeChoice1 = (1); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==19){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==20){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==21){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==22){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==23){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==24){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==25){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==26){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==27){ codeChoice1 = (1); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==28){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==29){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==30){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==31){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==32){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==33){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==34){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==35){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==36){ codeChoice1 = (2); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==37){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==38){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==39){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==40){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==41){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==42){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==43){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==44){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==45){ codeChoice1 = (2); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==46){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==47){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==48){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==49){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==50){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==51){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==52){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==53){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==54){ codeChoice1 = (2); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==55){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==56){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==57){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==58){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==59){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==60){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==61){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==62){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==63){ codeChoice1 = (3); codeChoice2 = (1); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==64){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==65){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==66){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==67){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==68){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==69){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==70){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==71){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==72){ codeChoice1 = (3); codeChoice2 = (2); codeChoice3 = (3); codeChoice4 = (3);}
+	if(pizzaCode==73){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (1);}
+	if(pizzaCode==74){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (2);}
+	if(pizzaCode==75){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (1); codeChoice4 = (3);}
+	if(pizzaCode==76){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (1);}
+	if(pizzaCode==77){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (2);}
+	if(pizzaCode==78){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (2); codeChoice4 = (3);}
+	if(pizzaCode==79){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (1);}
+	if(pizzaCode==80){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (2);}
+	if(pizzaCode==81){ codeChoice1 = (3); codeChoice2 = (3); codeChoice3 = (3); codeChoice4 = (3);}
+	stageCode();
+	}
+
+	
+
+function code() { 
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (1)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (2)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (3)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (4)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (5)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (6)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (7)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (8)} else
+if(codeChoice1 == (1) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (9)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (10)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (11)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (12)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (13)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (14)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (15)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (16)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (17)} else
+if(codeChoice1 == (1) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (18)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (19)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (20)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (21)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (22)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (23)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (24)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (25)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (26)} else
+if(codeChoice1 == (1) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (27)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (28)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (29)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (30)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (31)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (32)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (33)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (34)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (35)} else
+if(codeChoice1 == (2) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (36)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (37)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (38)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (39)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (40)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (41)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (42)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (43)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (44)} else
+if(codeChoice1 == (2) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (45)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (46)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (47)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (48)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (49)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (50)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (51)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (52)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (53)} else
+if(codeChoice1 == (2) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (54)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (55)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (56)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (57)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (58)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (59)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (60)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (61)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (62)} else
+if(codeChoice1 == (3) && codeChoice2 == (1)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (63)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (64)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (65)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (66)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (67)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (68)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (69)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (70)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (71)} else
+if(codeChoice1 == (3) && codeChoice2 == (2)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (72)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (1) ) {pizzaCode = (73)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (2) ) {pizzaCode = (74)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (1)  && codeChoice4 == (3) ) {pizzaCode = (75)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (1) ) {pizzaCode = (76)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (2) ) {pizzaCode = (77)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (2)  && codeChoice4 == (3) ) {pizzaCode = (78)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (1) ) {pizzaCode = (79)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (2) ) {pizzaCode = (80)} else
+if(codeChoice1 == (3) && codeChoice2 == (3)  && codeChoice3 == (3)  && codeChoice4 == (3) ) {pizzaCode = (81)} else {message.channel.send("bread error")}
+}
 }
