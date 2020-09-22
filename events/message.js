@@ -17,6 +17,9 @@ function pwait(iMilliSeconds) {
     }
 }
 module.exports = (client, message) => {
+var y = Math.floor(Math.random() * 2);
+  if (message.content.includes("yes or no")) {
+    if (y == 1) {message.reply(`yes`)}else {message.reply(`no`)}}
 const guild = message.guild;
 const member = message.member;
 const author = message.author;
