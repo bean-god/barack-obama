@@ -1,3 +1,3 @@
 worker: node index.js
-worker: nodemon index.js
-worker: forever start index.js
+worker1: nodemon index.js
+worker2: forever start index.js
