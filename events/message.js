@@ -1,8 +1,8 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const { prefix } = require("./config.json");
-const express = require('express');
-const app = express();
+//const express = require('express');
+//const app = express();
 var anger = 0;
 var reset = 0;
 var peepeepoopoo;
@@ -23,7 +23,7 @@ var adminID;
 var moderatorID;
 console.log(message.author);
 
-if (author.username === 'dirt' && author.discriminator === '2253') {if (message.content === `${prefix}hardReset`){hardReset()}}
+/*if (author.username === 'dirt' && author.discriminator === '2253') {if (message.content === `${prefix}hardReset`){hardReset()}}
 function hardReset() {app.get("/system/reboot", (req, res)=>{
     setTimeout(function () {
         process.on("exit", function () {
@@ -35,7 +35,7 @@ function hardReset() {app.get("/system/reboot", (req, res)=>{
         });
         process.exit();
     }, 1000);
-})}
+})}*/
 if(message.content === `${prefix}help`) {
 const help = new Discord.MessageEmbed()
 	.setColor('#0099ff')
