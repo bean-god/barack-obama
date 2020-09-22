@@ -1,9 +1,7 @@
 {
-  "start": "forever start index.js",
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
-    "3": "^2.1.0",
     "@derhuerst/http-basic": {
       "integrity": "sha512-v1cqPUpFjU8DInW4YkC9caGKy8kUkqz0z10yCHawkxgpaJPId0F5xKi8fUY5rqC58F9Muz9T136jNReZQH9xIw==",
       "requires": {
@@ -136,7 +134,6 @@
       "resolved": "https://registry.npmjs.org/caseless/-/caseless-0.12.0.tgz",
       "version": "0.12.0"
     },
-    "chokidar": "file:node_modules/chokidar",
     "chownr": {
       "integrity": "sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==",
       "resolved": "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz",
@@ -225,12 +222,9 @@
       "resolved": "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz",
       "version": "5.0.1"
     },
-    "express": "^4.17.1",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
-    "forever": "^3.0.2",
-    "forever-monitor": "^3.0.1",
     "fs": "0.0.1-security",
     "fs-minipass": {
       "integrity": "sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==",
@@ -556,7 +550,6 @@
       "resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
       "version": "1.0.1"
     },
-    "pm2": "^4.4.1",
     "prism-media": {
       "integrity": "sha512-I+nkWY212lJ500jLe4tN9tWO7nRiBAVdMv76P9kffZjYhw20raMlW1HSSvS+MLXC9MmbNZCazMrAr+5jEEgTuw==",
       "resolved": "https://registry.npmjs.org/prism-media/-/prism-media-1.2.2.tgz",
@@ -748,8 +741,5 @@
       "version": "4.0.0"
     },
     "ytdl-core": "^3.2.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
   }
 }

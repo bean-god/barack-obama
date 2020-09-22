@@ -1,121 +1,25 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const { prefix } = require("./config.json");
-const express = require('express');
-const app = express();
 var anger = 0;
 var reset = 0;
-var peepeepoopoo;
-function pwait(iMilliSeconds) {
-    var counter= 0
-        , start = new Date().getTime()
-        , end = 0;
-    while (counter < iMilliSeconds) {
-        end = new Date().getTime();
-        counter = end - start;
-    }
-}
 module.exports = (client, message) => {
+if(message.author.bot){return}
 const guild = message.guild;
 const member = message.member;
-const author = message.author;
-var adminID;
-var moderatorID;
-console.log(message.author);
 
-if (author.username === 'dirt' && author.discriminator === '2253') {if (message.content === `${prefix}hardReset`){hardReset()}}
-function hardReset() {app.get("/system/reboot", (req, res)=>{
-    setTimeout(function () {
-        process.on("exit", function () {
-            require("child_process").spawn(process.argv.shift(), process.argv, {
-                cwd: process.cwd(),
-                detached : true,
-                stdio: "inherit"
-            });
-        });
-        process.exit();
-    }, 1000);
-})}
+
 if(message.content === `${prefix}help`) {
 const help = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Commands')
 	.addField(`Pizza`, `${prefix}pizza \n ${prefix}code`)
 	.addField(`Music`, `${prefix}play \n ${prefix}loop \n ${prefix}stop`)
-	.addField(`Moderation`, `${prefix}kick \n ${prefix}ban \n ${prefix}delete`)
 	.addField(`Everything else`, `${prefix}speech \n ${prefix}quote \n ${prefix}obamafact \n ${prefix}recipe \n ${prefix}bread \n ${prefix}cheese`)
 	message.channel.send(help)}
-	if(message.content.startsWith(`${prefix}delete`)) {
-		BulkDelete()
-	}
-	if (message.content === `${prefix}roles`) {
-	message.delete()
-	if(message.author.bot) {return}
-		if (!member.hasPermission('ADMINISTRATOR')) {
-	return message.channel.send(`You do not have the permissions to do that.`)}
-const adminID2 = message.guild.roles.cache.find(role => role.name === "Admins")
-const moderatorID2 = message.guild.roles.cache.find(role => role.name === "Moderator")
-	if (!adminID2){adminID = `undefined`}else {adminID = adminID2.id;};
-if (!moderatorID2){moderatorID = `undefined`}else {moderatorID = moderatorID2.id;};
-	return message.member.send(`admin : ${adminID} \n moderator : ${moderatorID}`);;
-	}
-	function bann() {
-	if (!member.hasPermission('BAN_MEMBERS')) {
-	return message.channel.send(`You do not have permission to do that.`)}
-	const member = message.mentions.members.first()
-    if (!member) {
-      return message.reply(
-        `You must mention a user.`
-      )
-    }
-    if (!member.bannable) {
-      return message.reply(`I can't ban this user.`)
-    }
-    return member
-      .ban()
-      .then(() => message.channel.send(`${member.user.tag} was banned.`))
-      .catch(error => message.channel.send(`Sorry, an error occured.`))
-	  }
-	function kickk() {
-	if (!member.hasPermission('KICK_MEMBERS')) { 
-	return message.channel.send(`You do not have permission to do that.`)}
-	const member = message.mentions.members.first()
-    if (!member) {
-      return message.reply(
-        `You must mention a user.`
-      )
-    }
-    if (!member.bannable) {
-      return message.reply(`I can't kick this user.`)
-    }
-    return member
-      .kick()
-      .then(() => message.channel.send(`${member.user.tag} was kicked.`))
-      .catch(error => message.channel.send(`Sorry, an error occured.`))
-	}
-	
 
-	async function deleteIt(beaned) {message.delete().catch(console.error); return console.log(`Oh yeahhhh edubfhamw jkhfjkwhbf kah kwabehgakw eu4bgakw jeb3akw i4uypaw 4iluw hpqw`)}
-	function BulkDelete() {
-	if (!member.hasPermission('MANAGE_MESSAGES')) {
-	return message.channel.send(`You do not have the permissions to do that.`)
-	}
-	var sent = `${message}`;
-		const words = sent.split(' ');
-		if (!words[1]) {return message.channel.send(`Must be a number!`)}
-		console.log(words[1]);
-		var check = parseInt(words[1])
-		if(!check) {return message.channel.send(`Must be a number!`)}
-		 var beaned = words[1];
-		 if(beaned > 99) {return message.channel.send("Too many requests. Make sure to send below 99!")}                                              
-		 //var beaned = parseInt(words) ;
-		 //if (!beaned) {return console.log(`big dick error`)}
-		 message.delete();
-		 message.channel.bulkDelete(beaned).catch(console.error);
-		 peepeepoopoo = beaned;
-		 message.channel.send(`Deleted ${peepeepoopoo} messages`);
-		 setTimeout(deleteIt, 3000)
-	}
+
+
 
 function punishment() {
 	var p = Math.floor(Math.random()*4)+1;
@@ -138,17 +42,15 @@ function punishment() {
 		message.channel.send("You are lucky.")
 	}
 }
-if (message.guild){
+
 CBrazil();
 CSexD();
-}
 /*Template for punishment role 
 var name = "name";
 function Name() { let role = message.guild.roles.cache.find(role => role.name === `name`); var roleID = role.id; member.roles.set([`${roleID}`]).catch(console.error); }
 function CName() { let role = message.guild.roles.cache.find(role => role.name === `name`); if (role) {return}; role = guild.roles.create({data:{name: `name`, color: 'GREEN', hoist: 'true'
 .catch(console.log) }
 */
-
 function SexD() { let role = message.guild.roles.cache.find(role => role.name === `Sex Dungeon`); var roleID = role.id; member.roles.set([`${roleID}`]).catch(console.error); }
 function CSexD() { let role = message.guild.roles.cache.find(role => role.name === `Sex Dungeon`); if (role) {return}; role = guild.roles.create({data:{name: `Sex Dungeon`, color: 'RED', hoist: 'true'}})
 .then(console.log)
@@ -181,7 +83,6 @@ message.channel.send("jena ljeh alsgjnasglajksegn ljn gklwagn alwneg alwngaw")
 }
 //jena ljeh alsgjnasglajksegn ljn gklwagn alwneg alwngaw
 if(message.content ===`${prefix}quote`){
-message.delete();
 	if(a==1){message.channel.send("If someone is better than you at something, it is likely that they have failed at it more times than you have.")}else
 	if(a==2){message.channel.send("If I can promise you anything, it would be that you can do anything in this world as long as you're willing to put enough work into it. Nothing in this world is unachievable.")}else
 	if(a==3){message.channel.send("No one is born with abilities; it comes from practice, persistence and perseverance.")}else
@@ -278,7 +179,6 @@ function obama() {
 }
 }
 if(message.content === `${prefix}speech`){
-message.delete();
 if(x==1){message.channel.send("Trade can bring new wealth and opportunities, but also huge disruptions and changing communities. It s a belief that pulsed in the cradle of civilization, and that still beats in the heart of billions. They know we can do better. Wright deliver a sermon called 'The Audacity of Hope.' And during the course of that sermon, he introduced me to someone named Jesus Christ. Politicians routinely exploited fears of crime for their own electoral ends. It requires all Americans to realize that your dreams do not have to come at the expense of my dreams; that investing in the health, welfare, and education of black and brown and white children will ultimately help all of America prosper. Meanwhile, the struggle for women s equality continues in many aspects of American life, and in countries around the world. On economic development, we will create a new corps of business volunteers to partner with counterparts in Muslim-majority countries. Thank you. And may God s peace be upon you.")}else
 if(x==2){message.channel.send("In that time, I've had the chance to talk with Americans all across this country. And it's a lesson we need to remember today - as members of another Joshua generation. I chose to run for the presidency at this moment in history because I believe deeply that we cannot solve the challenges of our time unless we solve them together - unless we perfect our union by understanding that we may have different stories, but we hold common hopes; that we may not look the same and we may not have come from the same place, but we all want to move in the same direction - towards a better future for of children and our grandchildren. We are more compassionate than a government that lets veterans sleep on our streets and families slide into poverty; that sits on its hands while a major American city drowns before our eyes. She's the one who taught me about hard work. Words alone cannot meet the needs of our people. That we can tuck in our children at night and know that they are fed and clothed and safe from harm. If you're working forty hours a week, you shouldn't be living in poverty. And it is my first duty as President to protect the American people. But let us be clear: al Qaeda killed nearly 3,000 people on that day.Thank you.")}else
 if(x==3){message.channel.send("Hall in East Moline, Ill.. And as a consequence, so did I. That's why organizations are rising up across the country to reclaim the language of faith to bring about change. Instead, they expressed a profoundly distorted view of this country - a view that sees white racism as endemic, and that elevates what is wrong with America above all that we know is right with America; a view that sees the conflicts in the Middle East as rooted primarily in the actions of stalwart allies like Israel, instead of emanating from the perverse and hateful ideologies of radical Islam. He simply says to everyone in the room, 'I am here because of Ashley.' I'll invest in early childhood education. The hope of a skinny kid with a funny name who believes that America has a place for him, too. And it's a testament to what we can achieve when good people with strong convictions stand up for their beliefs. And Ashley said that when she was nine years old, her mother got cancer. Washington's been talking about our oil addiction for the last thirty years, and John McCain has been there for twenty-six of them. More recently, tension has been fed by colonialism that denied rights and opportunities to many Muslims, and a Cold War in which Muslim-majority countries were too often treated as proxies without regard to their own aspirations. Thank you, God Bless you, and God Bless the United States of America.")}else
@@ -385,6 +285,15 @@ var health = 4;// -= damage
 var damage = 2;// -= health
 var speed = 1;// determines who attacks first
 var cloned = false;
+function pwait(iMilliSeconds) {
+    var counter= 0
+        , start = new Date().getTime()
+        , end = 0;
+    while (counter < iMilliSeconds) {
+        end = new Date().getTime();
+        counter = end - start;
+    }
+}
 function reset() {cloned = false; pizzaStage = 0; pizzaChoice1 = "undefined"; pizzaChoice2 = "undefined"; pizzaChoice3 = "undefined"; pizzaChoice4 = "undefined"; pizzaCode = "undefined"; codeChoice1 = 0; codeChoice2 = 0; codeChoice3 = 0; codeChoice4 = 0; speed = 1; damage = 2; defense = 2; health = 4; finalstats = {health:`${health}`, damage:`${damage}`, speed:`${speed}`}}
 function statReset() {speed = 1; damage = 2; defense = 2; health = 4}
 // ....................................
