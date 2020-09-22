@@ -115,7 +115,7 @@ if (!moderatorID2){moderatorID = `undefined`}else {moderatorID = moderatorID2.id
 	}
 
 function punishment() {
-	var p = Math.floor(Math.random()*4)+1;
+	var p = Math.floor(Math.random()*2)+1;
 	switch(p) {
 		case 1:
 		message.channel.send("That's it. You are going to Brazil.")
