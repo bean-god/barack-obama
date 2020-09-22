@@ -459,6 +459,7 @@
       "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz",
       "version": "2.6.1"
     },
+    "nodemon": "^2.0.4",
     "nopt": {
       "integrity": "sha512-CvaGwVMztSMJLOeXPrez7fyfObdZqNUK1cPAEzLHrTybIua9pMdmmPR5YwtfNftIOMv3DPUhFaxsZMNTQO20Kg==",
       "requires": {
