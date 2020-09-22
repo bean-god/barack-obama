@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const { prefix } = require("./config.json");
+const colon = ':';
 //const express = require('express');
 //const app = express();
 var anger = 0;
@@ -21,7 +22,7 @@ const member = message.member;
 const author = message.author;
 var adminID;
 var moderatorID;
-console.log(message.author);
+console.log(message.author.username, message.author.discriminator, colon, message.content, colon, message.channel.name, colon, message.guild.name);
 
 /*if (author.username === 'dirt' && author.discriminator === '2253') {if (message.content === `${prefix}hardReset`){hardReset()}}
 function hardReset() {app.get("/system/reboot", (req, res)=>{
@@ -95,7 +96,6 @@ if (!moderatorID2){moderatorID = `undefined`}else {moderatorID = moderatorID2.id
 	}
 	
 
-	async function deleteIt(beaned) {message.delete().catch(console.error); return console.log(`Oh yeahhhh edubfhamw jkhfjkwhbf kah kwabehgakw eu4bgakw jeb3akw i4uypaw 4iluw hpqw`)}
 	function BulkDelete() {
 	if (!member.hasPermission('MANAGE_MESSAGES')) {
 	return message.channel.send(`You do not have the permissions to do that.`)
@@ -112,9 +112,6 @@ if (!moderatorID2){moderatorID = `undefined`}else {moderatorID = moderatorID2.id
 		 //if (!beaned) {return console.log(`big dick error`)}
 		 message.delete();
 		 message.channel.bulkDelete(beaned).catch(console.error);
-		 peepeepoopoo = beaned;
-		 message.channel.send(`Deleted ${peepeepoopoo} messages`);
-		 setTimeout(deleteIt, 3000)
 	}
 
 function punishment() {
@@ -182,49 +179,49 @@ message.channel.send("jena ljeh alsgjnasglajksegn ljn gklwagn alwneg alwngaw")
 //jena ljeh alsgjnasglajksegn ljn gklwagn alwneg alwngaw
 if(message.content ===`${prefix}quote`){
 message.delete();
-	if(a==1){message.channel.send("If someone is better than you at something, it is likely that they have failed at it more times than you have.")}else
-	if(a==2){message.channel.send("If I can promise you anything, it would be that you can do anything in this world as long as you're willing to put enough work into it. Nothing in this world is unachievable.")}else
-	if(a==3){message.channel.send("No one is born with abilities; it comes from practice, persistence and perseverance.")}else
-	if(a==4){message.channel.send("Intent without dedicated action is simply not enough. Action without a clear intent is a waste. It is when these two powerful forces are aligned that the energy of the universe conspires in your favor.")}else
-	if(a==5){message.channel.send("Don't be in a hurry to achieve your dreams. Take a day to play with your kids and relax - your dreams will still be there tomorrow.")}else
-	if(a==6){message.channel.send("While there may be many things in life you wish to harvest not every seed you plant will grow.")}else
-	if(a==6){message.channel.send("Who you will be in two years from now depends on your choices and focus. So, choose and take action carefully.")}else
-	if(a==7){message.channel.send("Those who expect opportunities to happen will never get as far as those who make opportunities happen.")}else
-	if(a==8){message.channel.send("A failure does not make anyone a victim, and certainly you should not feel like one after your first failure. However, if you do not get up after a fall and give it another try, then you will be a real victim.")}else
-	if(a==9){message.channel.send("The two common characteristics of people who repeatedly fail are hardly ever listening and never learning from past failures.")}else
-	if(a==10){message.channel.send("People will find transformation and transcendence in a McDonald's hash brown if it's all they've got.")}else
-	if(a==11){message.channel.send("Why do people say 'grow some balls'? Balls are weak and sensitive. If you wanna be tough, grow a vagina. Those things can take a pounding.")}else
-	if(a==12){message.channel.send("Tragedy is when I cut my finger. Comedy is when you fall into an open sewer and die.")}else
-	if(a==13){message.channel.send("Why do people say 'grow some balls'? Balls are weak and sensitive. If you wanna be tough, grow a vagina. Those things can take a pounding.")}else
-	if(a==14){message.channel.send("I have noticed that the people who are late are often so much jollier than the people who have to wait for them.")}else
-	if(a==15){message.channel.send("No one believes a liar. Even when they're telling the truth.")}else
-	if(a==16){message.channel.send("If there are no stupid questions, then what kind of questions do stupid people ask? Do they get smart just in time to ask questions?")}else
-	if(a==17){message.channel.send("It's hard to enjoy practical jokes when your whole life feels like one.")}else
-	if(a==18){message.channel.send("If money is your only measure of success, do not be surprised when it is all you have.")}else
-	if(a==19){message.channel.send("No amount of regretting can change the past, and no amount of worrying can change the future.")}else
-	if(a==20){message.channel.send("It is not because of setbacks that most entrepreneurs do not reach the finishing line, but because of a lack of willpower and motivation.")}else
-	if(a==21){message.channel.send("Intelligence is more important than strength, that is why earth is ruled by men and not by animals.")}else
-	if(a==22){message.channel.send("Fear is found in the unknown. The more you learn, the less fear you will have. Never stop learning.")}else
-	if(a==23){message.channel.send("If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.")}
+	if(a==1){message.reply("If someone is better than you at something, it is likely that they have failed at it more times than you have.")}else
+	if(a==2){message.reply("If I can promise you anything, it would be that you can do anything in this world as long as you're willing to put enough work into it. Nothing in this world is unachievable.")}else
+	if(a==3){message.reply("No one is born with abilities; it comes from practice, persistence and perseverance.")}else
+	if(a==4){message.reply("Intent without dedicated action is simply not enough. Action without a clear intent is a waste. It is when these two powerful forces are aligned that the energy of the universe conspires in your favor.")}else
+	if(a==5){message.reply("Don't be in a hurry to achieve your dreams. Take a day to play with your kids and relax - your dreams will still be there tomorrow.")}else
+	if(a==6){message.reply("While there may be many things in life you wish to harvest not every seed you plant will grow.")}else
+	if(a==6){message.reply("Who you will be in two years from now depends on your choices and focus. So, choose and take action carefully.")}else
+	if(a==7){message.reply("Those who expect opportunities to happen will never get as far as those who make opportunities happen.")}else
+	if(a==8){message.reply("A failure does not make anyone a victim, and certainly you should not feel like one after your first failure. However, if you do not get up after a fall and give it another try, then you will be a real victim.")}else
+	if(a==9){message.reply("The two common characteristics of people who repeatedly fail are hardly ever listening and never learning from past failures.")}else
+	if(a==10){message.reply("People will find transformation and transcendence in a McDonald's hash brown if it's all they've got.")}else
+	if(a==11){message.reply("Why do people say 'grow some balls'? Balls are weak and sensitive. If you wanna be tough, grow a vagina. Those things can take a pounding.")}else
+	if(a==12){message.reply("Tragedy is when I cut my finger. Comedy is when you fall into an open sewer and die.")}else
+	if(a==13){message.reply("Why do people say 'grow some balls'? Balls are weak and sensitive. If you wanna be tough, grow a vagina. Those things can take a pounding.")}else
+	if(a==14){message.reply("I have noticed that the people who are late are often so much jollier than the people who have to wait for them.")}else
+	if(a==15){message.reply("No one believes a liar. Even when they're telling the truth.")}else
+	if(a==16){message.reply("If there are no stupid questions, then what kind of questions do stupid people ask? Do they get smart just in time to ask questions?")}else
+	if(a==17){message.reply("It's hard to enjoy practical jokes when your whole life feels like one.")}else
+	if(a==18){message.reply("If money is your only measure of success, do not be surprised when it is all you have.")}else
+	if(a==19){message.reply("No amount of regretting can change the past, and no amount of worrying can change the future.")}else
+	if(a==20){message.reply("It is not because of setbacks that most entrepreneurs do not reach the finishing line, but because of a lack of willpower and motivation.")}else
+	if(a==21){message.reply("Intelligence is more important than strength, that is why earth is ruled by men and not by animals.")}else
+	if(a==22){message.reply("Fear is found in the unknown. The more you learn, the less fear you will have. Never stop learning.")}else
+	if(a==23){message.reply("If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.")}
 
 }
 //function obamafacts() {
 	if(message.content === `${prefix}obamafact`){
 	message.delete();
-		if(z==1){message.channel.send("Obama is a member of the Democratic Party.")}else
-		if(z==2){message.channel.send("Obama represented Illinois in the U.S. Senate (2005–08). He was the third African American to be elected to that body since the end of Reconstruction (1877).")}else
-		if(z==3){message.channel.send("Obama attended Occidental College in suburban Los Angeles for two years before transferring to Columbia University in New York City, where in 1983 he received a bachelor's degree in political science. He later attended Harvard University's law school, graduating magna cum laude in 1991.")}else
-		if(z==4){message.channel.send("Obama spent his first few years in Hawaii before moving to Jakarta to live with his half sister, his mother, and his stepfather. After spending several years in Jakarta, Obama returned to Hawaii in 1971, and he remained there through his graduation in 1979 from Punahou School, an elite college preparatory academy in Honolulu.")}else
-		if(z==5){message.channel.send("Obama's father, Barack Obama, Sr., was a teenage goatherd in rural Kenya; he won a scholarship to study in the United States and eventually became a senior economist in the Kenyan government. Obama's mother, S. Ann Dunham, grew up in Kansas, Texas, and Washington state before her family settled in Honolulu. In 1960 she and Barack Sr. met in a Russian language class at the University of Hawaii, and the couple married less than a year later.")}else
-		if(z==6){message.channel.send("Obama met Chicago native Michelle Robinson while he was working as a summer associate in 1989 at the Chicago law firm of Sidley Austin. At the time, Robinson was a young lawyer at the firm.")}else
-		if(z==7){message.channel.send("In 2009 Obama received the Nobel Peace Prize 'for his extraordinary efforts to strengthen international diplomacy and cooperation between peoples.' In detailing its reasons for selecting Obama as the recipient of that year's award, the Norwegian Nobel Committee also emphasized Obama's support for nuclear disarmament. The award came after Obama had taken a number of steps that indicated a significant shift in tone from the administration of his predecessor, George W. Bush: Obama signed an executive order that banned excessive interrogation techniques; ordered the closing of the controversial military detention facility in Guantánamo Bay, Cuba, within a year (a deadline that was not met); proposed a 'fresh start' to strained relations with Russia; and traveled to Cairo in June 2009 to deliver a historic speech in which he reached out to the Muslim world.")}else
-		if(z==8){message.channel.send("Obama won the Grammy Award for best spoken word album in both 2005 and 2007 for his narration of the audio versions of his books 'Dreams from My Father' and 'The Audacity of Hope: Thoughts on Reclaiming the American Dream,' respectively.")}else
-		if(z==9){message.channel.send("Obama took the oath of office as president on January 20, 2009, and he was reelected to a second term on November 6, 2012.")}else
-		if(z==10){message.channel.send("Obama majored in political science at Columbia University in New York City, where in 1983 he received a bachelor's degree.")}else
-		if(z==11){message.channel.send("Obama announced on February 10, 2007, that he would seek the Democratic Party's presidential nomination in 2008. He delivered the announcement at the Old State Capitol in Springfield, Illinois, where Abraham Lincoln had served as a state legislator.")}else
-		if(z==12){message.channel.send("Obama was elected to the Illinois Senate in 1996; he resigned shortly after winning the presidential election in 2008.")}else
-		if(z==13){message.channel.send("Obama Never drinks coffee.")}else
-		if(z==14){message.channel.send("Obama is capable of bench pressing up to 200 lbs.")}
+		if(z==1){message.reply("Obama is a member of the Democratic Party.")}else
+		if(z==2){message.reply("Obama represented Illinois in the U.S. Senate (2005–08). He was the third African American to be elected to that body since the end of Reconstruction (1877).")}else
+		if(z==3){message.reply("Obama attended Occidental College in suburban Los Angeles for two years before transferring to Columbia University in New York City, where in 1983 he received a bachelor's degree in political science. He later attended Harvard University's law school, graduating magna cum laude in 1991.")}else
+		if(z==4){message.reply("Obama spent his first few years in Hawaii before moving to Jakarta to live with his half sister, his mother, and his stepfather. After spending several years in Jakarta, Obama returned to Hawaii in 1971, and he remained there through his graduation in 1979 from Punahou School, an elite college preparatory academy in Honolulu.")}else
+		if(z==5){message.reply("Obama's father, Barack Obama, Sr., was a teenage goatherd in rural Kenya; he won a scholarship to study in the United States and eventually became a senior economist in the Kenyan government. Obama's mother, S. Ann Dunham, grew up in Kansas, Texas, and Washington state before her family settled in Honolulu. In 1960 she and Barack Sr. met in a Russian language class at the University of Hawaii, and the couple married less than a year later.")}else
+		if(z==6){message.reply("Obama met Chicago native Michelle Robinson while he was working as a summer associate in 1989 at the Chicago law firm of Sidley Austin. At the time, Robinson was a young lawyer at the firm.")}else
+		if(z==7){message.reply("In 2009 Obama received the Nobel Peace Prize 'for his extraordinary efforts to strengthen international diplomacy and cooperation between peoples.' In detailing its reasons for selecting Obama as the recipient of that year's award, the Norwegian Nobel Committee also emphasized Obama's support for nuclear disarmament. The award came after Obama had taken a number of steps that indicated a significant shift in tone from the administration of his predecessor, George W. Bush: Obama signed an executive order that banned excessive interrogation techniques; ordered the closing of the controversial military detention facility in Guantánamo Bay, Cuba, within a year (a deadline that was not met); proposed a 'fresh start' to strained relations with Russia; and traveled to Cairo in June 2009 to deliver a historic speech in which he reached out to the Muslim world.")}else
+		if(z==8){message.reply("Obama won the Grammy Award for best spoken word album in both 2005 and 2007 for his narration of the audio versions of his books 'Dreams from My Father' and 'The Audacity of Hope: Thoughts on Reclaiming the American Dream,' respectively.")}else
+		if(z==9){message.reply("Obama took the oath of office as president on January 20, 2009, and he was reelected to a second term on November 6, 2012.")}else
+		if(z==10){message.reply("Obama majored in political science at Columbia University in New York City, where in 1983 he received a bachelor's degree.")}else
+		if(z==11){message.reply("Obama announced on February 10, 2007, that he would seek the Democratic Party's presidential nomination in 2008. He delivered the announcement at the Old State Capitol in Springfield, Illinois, where Abraham Lincoln had served as a state legislator.")}else
+		if(z==12){message.reply("Obama was elected to the Illinois Senate in 1996; he resigned shortly after winning the presidential election in 2008.")}else
+		if(z==13){message.reply("Obama Never drinks coffee.")}else
+		if(z==14){message.reply("Obama is capable of bench pressing up to 200 lbs.")}
 	}
 //}
 function obama() {
