@@ -17,6 +17,182 @@ function pwait(iMilliSeconds) {
     }
 }
 module.exports = (client, message) => {
+var sent = `${message}`;
+const words = sent.split(' ');
+var element = words[2];
+var grams;
+var moles;
+var atoms;
+var exponents;
+var ElementValid = false;
+//const MoleE = Math.pow(6.022, 23);
+const MoleE = 602200000000000000000000;
+var selectedE;
+if(message.content.startsWith(`${prefix}GramsToMoles`)) {
+		if (!words[1] && !words[2]) {return message.channel.send(`Usage: \n ${prefix}GramsToMoles grams element`)}
+		if (!words[1]) {return message.channel.send(`Must include a number!`)}
+		console.log(words[1]);
+		console.log(words[2]);
+		var check = parseInt(words[1])
+		//if(!check) {return message.channel.send(`Must be a number!`)}
+		grams = words[1];
+		 elementCheck();
+		calcGramsToMoles()
+}
+if(message.content.startsWith(`${prefix}MolesToGrams`)) {
+		if (!words[1] && !words[2]) {return message.channel.send(`Usage: \n ${prefix}MolesToGrams moles element`)}
+		if (!words[1]) {return message.channel.send(`Must include a number!`)}
+		console.log(words[1]);
+		console.log(words[2]);
+		var check = parseInt(words[1])
+		//if(!check) {return message.channel.send(`Must be a number!`)}
+		moles = words[1];
+		 elementCheck();
+		calcMolesToGrams()
+}
+if(message.content.startsWith(`${prefix}AtomsToMoles`)) {
+		if (!words[1] && !words[2]) {return message.channel.send(`Usage: \n ${prefix}AtomsToMoles atoms exponent(for scientific notation)`)}
+		if (!words[2]) {return message.channel.send(`Must include an exponent!`)}
+		console.log(words[1]);
+		console.log(words[2]);
+		var check = parseInt(words[1])
+		//if(!check) {return message.channel.send(`Must be a number!`)}
+		check = parseInt(words[2])
+		//if(!check) {return message.channel.send(`MuSst be a number!`)}
+		ElementValid = true;
+		atoms = words[1];
+		exponents = words[2];
+		calcAtomsToMoles()
+}
+if(message.content.startsWith(`${prefix}MolesToAtoms`)) {
+		if (!words[1] && !words[2]) {return message.channel.send(`Usage: \n ${prefix}MolesToAtoms moles`)}
+		console.log(words[1]);
+		var check = parseInt(words[1])
+		//if(!check) {return message.channel.send(`Must be a number!`)}
+		ElementValid = true;
+		moles = words[1];
+		calcMolesToAtoms()
+}
+if(message.content.startsWith(`${prefix}GramsToAtoms`)) {
+		if (!words[1] && !words[2]) {return message.channel.send(`Usage: \n ${prefix}GramsToMoles grams element`)}
+		if (!words[1]) {return message.channel.send(`Must include a number!`)}
+		console.log(words[1]);
+		console.log(words[2]);
+		var check = parseInt(words[1])
+		//if(!check) {return message.channel.send(`Must be a number!`)}
+		grams = words[1];
+		 elementCheck();
+		calcGramsToAtoms()
+}
+function elementCheck() {
+switch(element) {
+	case "magnesium":
+	selectedE = 24.31;
+	ElementValid = true;
+	break;
+	case "lithium":
+	selectedE = 6.94;
+	ElementValid = true;
+	break;
+	case "radon":
+	selectedE = 222;
+	ElementValid = true;
+	break;
+	case "copper":
+	selectedE = 63.55;
+	ElementValid = true;
+	break;
+	case "helium":
+	selectedE = 4;
+	ElementValid = true;
+	break;
+	case "calcium":
+	selectedE = 40.08;
+	ElementValid = true;
+	break;
+	case "zinc":
+	selectedE = 65.38;
+	ElementValid = true;
+	break;
+	case "iron":
+	selectedE = 55.85;
+	ElementValid = true;
+	break;
+	case "sodium":
+	selectedE = 22.99;
+	ElementValid = true;
+	break;
+	default:
+	return message.channel.send(`Must include a valid element!`);
+	ElementValid = false;
+}
+console.log(selectedE)
+}
+function calcGramsToMoles() {
+//if (ElementValid) {
+	var moled;
+	moled = (grams / selectedE);
+	message.channel.send(moled)
+	console.log(moled)
+	message.channel.send(`Don't forget to round!`)
+	ElementValid = false;
+//	}
+}
+function calcMolesToGrams() {
+if (ElementValid) {
+	var moled1;
+	moled1 = (moles * selectedE);
+	message.channel.send(moled1)
+	console.log(moled1)
+	message.channel.send(`Don't forget to round!`)
+	ElementValid = false;
+	}
+}
+function calcAtomsToMoles() {
+if (ElementValid) {
+	var moled2;    
+	var moled3;
+	var moled4;
+	moled3 = (Math.pow(10, exponents));
+	console.log(moled3)
+	moled4 = atoms * moled3;
+	moled2 = (moled4 / MoleE);
+	message.channel.send(moled2)
+	message.channel.send(`Don't forget to round!`)
+	console.log(moled2)
+	ElementValid = false;
+	}
+}
+function calcMolesToAtoms() {
+if (ElementValid) {
+	var moled7;    
+	moled7 = MoleE * moles;
+	message.channel.send(moled7)
+	message.channel.send(`Don't forget to round!`)
+	console.log(moled7)
+	ElementValid = false;
+	}
+}
+function calcGramsToAtoms() {
+if (ElementValid) {
+	var moled5;
+	var moled6;
+	moled5 = (grams / selectedE);
+	moled6 = (moled5 * MoleE);
+	message.channel.send(moled6)
+	message.channel.send(`Don't forget to round!`)
+	console.log(moled6)
+	ElementValid = false;
+	}
+}
+
+
+
+
+
+
+
+
 var y = Math.floor(Math.random() * 2);
   if (message.content.includes("yes or no")) {
     if (y == 1) {message.channel.send(`Yes`)}else {message.channel.send(`No`)}}
@@ -103,7 +279,6 @@ if (!moderatorID2){moderatorID = `undefined`}else {moderatorID = moderatorID2.id
 	if (!member.hasPermission('MANAGE_MESSAGES')) {
 	return message.channel.send(`You do not have the permissions to do that.`)
 	}
-	var sent = `${message}`;
 		const words = sent.split(' ');
 		if (!words[1]) {return message.channel.send(`Must be a number!`)}
 		console.log(words[1]);
