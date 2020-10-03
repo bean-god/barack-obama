@@ -736,5 +736,8 @@
     "youtube-search": "^1.1.4",
     "ytdl-core": "^3.2.2",
     "ytsr": "^1.0.3"
+  },
+  "scripts": {
+    "test": "pm2 start index.js"
   }
 }
