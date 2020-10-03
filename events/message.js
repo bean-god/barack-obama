@@ -21,15 +21,6 @@ const colon = ':';
 var anger = 0;
 var reset = 0;
 var peepeepoopoo;
-function pwait(iMilliSeconds) {
-    var counter= 0
-        , start = new Date().getTime()
-        , end = 0;
-    while (counter < iMilliSeconds) {
-        end = new Date().getTime();
-        counter = end - start;
-    }
-}
 var pizzaStage = 0;
 var pizzaCode;
 var pizzaChoice1 = "undefined";
@@ -47,19 +38,30 @@ var speed = 1;// determines who attacks first
 var cloned = false;
 function reset() { cloned = false; pizzaStage = 0; pizzaChoice1 = "undefined"; pizzaChoice2 = "undefined"; pizzaChoice3 = "undefined"; pizzaChoice4 = "undefined"; pizzaCode = "undefined"; codeChoice1 = 0; codeChoice2 = 0; codeChoice3 = 0; codeChoice4 = 0; speed = 1; damage = 2; defense = 2; health = 4; finalstats = { health: `${health}`, damage: `${damage}`, speed: `${speed}` } }
 function statReset() { speed = 1; damage = 2; defense = 2; health = 4 }
-module.exports = (client, message) => {
 var sandwich = false;
-var sent = `${message}`;
-const words = sent.split(' ');
-var element = words[2];
 var grams;
 var moles;
 var atoms;
 var exponents;
 var ElementValid = false;
-//const MoleE = Math.pow(6.022, 23);
 const MoleE = 602200000000000000000000;
 var selectedE;
+module.exports = (client, message) => {
+	function pwait(iMilliSeconds) {
+		var counter = 0
+			, start = new Date().getTime()
+			, end = 0;
+		while (counter < iMilliSeconds) {
+			end = new Date().getTime();
+			counter = end - start;
+		}
+	}
+	var sent = `${message}`;
+	const words = sent.split(' ');
+	var element = words[2];
+
+// ----------------- No Bots --------------------
+if (message.author.bot) { return }
 
 if(message.content === `Obama you do it`) {message.channel.send(`n!marry`)}
 
@@ -69,7 +71,6 @@ if(message.content.startsWith(`${prefix}GramsToMoles`)) {
 		console.log(words[1]);
 		console.log(words[2]);
 		var check = parseInt(words[1])
-		//if(!check) {return message.channel.send(`Must be a number!`)}
 		grams = words[1];
 		 elementCheck();
 		calcGramsToMoles()
@@ -80,7 +81,6 @@ if(message.content.startsWith(`${prefix}MolesToGrams`)) {
 		console.log(words[1]);
 		console.log(words[2]);
 		var check = parseInt(words[1])
-		//if(!check) {return message.channel.send(`Must be a number!`)}
 		moles = words[1];
 		 elementCheck();
 		calcMolesToGrams()
@@ -91,7 +91,6 @@ if(message.content.startsWith(`${prefix}AtomsToMoles`)) {
 		console.log(words[1]);
 		console.log(words[2]);
 		var check = parseInt(words[1])
-		//if(!check) {return message.channel.send(`Must be a number!`)}
 		check = parseInt(words[2])
 		//if(!check) {return message.channel.send(`MuSst be a number!`)}
 		ElementValid = true;
@@ -103,7 +102,6 @@ if(message.content.startsWith(`${prefix}MolesToAtoms`)) {
 		if (!words[1] && !words[2]) {return message.channel.send(`Usage: \n ${prefix}MolesToAtoms moles`)}
 		console.log(words[1]);
 		var check = parseInt(words[1])
-		//if(!check) {return message.channel.send(`Must be a number!`)}
 		ElementValid = true;
 		moles = words[1];
 		calcMolesToAtoms()
@@ -114,7 +112,6 @@ if(message.content.startsWith(`${prefix}GramsToAtoms`)) {
 		console.log(words[1]);
 		console.log(words[2]);
 		var check = parseInt(words[1])
-		//if(!check) {return message.channel.send(`Must be a number!`)}
 		grams = words[1];
 		 elementCheck();
 		calcGramsToAtoms()
@@ -267,21 +264,11 @@ function hardReset() {app.get("/system/reboot", (req, res)=>{
         process.exit();
     }, 1000);
 })}*/
-if(message.content === `${prefix}help`) {
-const help = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Commands')
-	.addField(`Pizza`, `${prefix}pizza \n ${prefix}code`)
-	.addField(`Music`, `${prefix}play \n ${prefix}loop \n ${prefix}stop`)
-	.addField(`Moderation`, `${prefix}kick \n ${prefix}ban \n ${prefix}delete`)
-	.addField(`Everything else`, `${prefix}speech \n ${prefix}quote \n ${prefix}obamafact \n ${prefix}recipe \n ${prefix}bread \n ${prefix}cheese`)
-	message.channel.send(help)}
 	if(message.content.startsWith(`${prefix}delete`)) {
 		BulkDelete()
 	}
 	if (message.content === `${prefix}roles`) {
 	message.delete()
-	if(message.author.bot) {return}
 		if (!member.hasPermission('ADMINISTRATOR')) {
 	return message.channel.send(`You do not have the permissions to do that.`)}
 const adminID2 = message.guild.roles.cache.find(role => role.name === "Admins")
@@ -407,7 +394,6 @@ var x = Math.floor(Math.random() * 24)+1;
 var w = Math.floor(Math.random() * 14)+1;  
 var z = Math.floor(Math.random() * 14)+1;  
 var a = Math.floor(Math.random() * 23)+1;  
-if(message.author.bot){return}
 if(message.content.includes("nigger") || message.content.includes("Nigger") || message.content.includes("NIGGER") || message.content.includes("nigga") || message.content.includes("Nigga") || message.content.includes("NIGGA")){message.delete(); obama()}
 if(message.content.includes("donald trump") || message.content.includes("Donald Trump") || message.content.includes("Donald trump") ||message.content.includes("donald Trump") || message.content.includes("DONALD TRUMP")){message.delete(); obama(); message.channel.send("Vote for Obama  as your president in 2020!")}
 
@@ -467,71 +453,7 @@ function obama() {
 }
 }
 
-/*
-function warning() {
-if(anger == 0){
-	if(w==1){message.channel.send("You should know better.")}else
-	if(w==2){message.channel.send("This is a warning.")}else
-	if(w==3){message.channel.send("Why would you say that?")}else
-	if(w==4){message.channel.send("You know better than that.")}else
-	if(w==5){message.channel.send("Don't.")}else
-	if(w==6){message.channel.send("Be careful about what you say.")}else
-	if(w==7){message.channel.send("Do you know who I am?")}else
-	if(w==8){message.channel.send("What you are doing is dangerous.")}else
-	if(w==9){message.channel.send("Do not say that.")}else
-	if(w==10){message.channel.send("No.")}else
-	if(w==11){message.channel.send("Be careful.")}else
-	if(w==12){message.channel.send("You are making me angry.")}else
-	if(w==13){message.channel.send("This is a warning.")}else
-	if(w==14){message.channel.send("My anger is rising.")}
-	anger = 1;
-	} else {angry()}
-	}
-	function angry() {
-	if(anger == 1){
-	if(w==1){message.channel.send("d")}else
-	if(w==2){message.channel.send("d")}else
-	if(w==3){message.channel.send("d")}else
-	if(w==4){message.channel.send("d")}else
-	if(w==5){message.channel.send("s")}else
-	if(w==6){message.channel.send("h")}else
-	if(w==7){message.channel.send("k")}else
-	if(w==8){message.channel.send("k")}else
-	if(w==9){message.channel.send("k")}else
-	if(w==10){message.channel.send("k")}else
-	if(w==11){message.channel.send("k")}else
-	if(w==12){message.channel.send("k")}else
-	if(w==13){message.channel.send("k")}else
-	if(w==14){message.channel.send("k")}
-	anger = 2;
-	}else if(anger==2){rage}
-	}
-	function rage() {
-	if(anger == 2){
-	if(w==1){message.channel.send("")}else
-	if(w==2){message.channel.send("")}else
-	if(w==3){message.channel.send("")}else
-	if(w==4){message.channel.send("")}else
-	if(w==5){message.channel.send("")}else
-	if(w==6){message.channel.send("")}else
-	if(w==7){message.channel.send("")}else
-	if(w==8){message.channel.send("")}else
-	if(w==9){message.channel.send("")}else
-	if(w==10){message.channel.send("")}else
-	if(w==11){message.channel.send("")}else
-	if(w==12){message.channel.send("")}else
-	if(w==13){message.channel.send("")}else
-	if(w==14){message.channel.send("")}
-	anger = 3;
-	}
-	}
-	function blindrage() {
-	if(anger == 3){
 
-	anger = 0;
-	} else{warning()}
-	}*/
-// ....................................
 
 
 var beat = Math.floor(Math.random() * 113)+1;
@@ -569,28 +491,11 @@ const help = new Discord.MessageEmbed()
 	message.channel.send(help)
 sandwich = false;
 }
-
 if(message.content.includes(`sandwich`)) {sandwichs()}
 if (message.content.includes(`sauce`)) {condiment()}
-
-if(message.content.includes(`meat`)) {
-	meat()
-}
-
-
-	if (message.content.includes("bread")) {
-	bread()
-	}
-
-
-
-
-
-
-
-if(message.content.includes("cheese") || message.content.includes("Cheese")){
-cheese();
-}
+if(message.content.includes(`meat`)) {meat()}
+if (message.content.includes("bread")) {bread()}
+if(message.content.includes("cheese") || message.content.includes("Cheese")){cheese();}
 
 
 
@@ -802,7 +707,7 @@ function stageCode(){
 		{ name: '\u200B', value: '\u200B' }
 	)
 	.setTimestamp()
-	.setFooter('This took even longer to make. Do it again?');
+	.setFooter('Combat system coming to a store near you');
 
 	message.channel.send(creet)
 }
@@ -1503,8 +1408,7 @@ message.delete();
 
 
 
-	// -----------Bot Messages are not Included Below This Point--------------------
-	if (message.author.bot) { return };
+
 	if (Usent[0] == (`$burger`)) {
 		var check = parseInt(sent[0])
 		if (sent[0] == 'menu') { return Menu() }
@@ -1523,9 +1427,6 @@ message.delete();
 	}
 	function Burger() {
 		message.channel.send(burgers[sent[0]]);
-	}
-	function Choose() {
-
 	}
 	function Menu() {
 		const burged = new Discord.MessageEmbed()
@@ -1575,47 +1476,102 @@ message.delete();
 
 
 
+	const request = require('request'); //depricated !
+	const fs = require('fs');
+	const directory = "assets/";
+	var download = function (url, filename, callback) {
+		request.head(url, function (err, res, body) {
+			request(url).pipe(fs.createWriteStream(filename)).on('close', callback);
+		});
+	};
 
 
 
 
 
 
+	/*
+	 var m = message.content.toLowerCase();
+	var sent = m.split(` `);
+	sent.shift();
+	var Usent = m.split(` `);
+	  
+	 */ 
 
 
 
 
 
+	
 
 
-
-
-
-
-
+	if (message.content === 'a') SmealDB()
 	var short = false;
-	function mealDB() {
+	function SmealDB() {
 		var http = require("https");
-
 		var options = {
 			"method": "GET",
 			"hostname": "themealdb.com",
 			"port": null,
-			"path": "/api/json/v1/1/random.php",
-			//"headers": {
-			//	"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-			//	"x-rapidapi-key": "7fa4e9affamshe7dbae314ad4ecap17cbd3jsn2314eb7c1d44",
-			//	"useQueryString": true,
-			//}
+			"path": "/api/json/v1/1/search.php?s=Cheese"
 		};
-
 		var req = http.request(options, function (res) {
 			var chunks = [];
+			res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks);
+				const bad = bod.toString();
+				var bong = bad.split('},');
+				var choice = Math.floor(Math.random() * bong.length);
+				var body = bong[choice];
+				getName(body)
+				getDesc(body)
+				getLink(body)
+				getNail(body)
 
-			res.on("data", function (chunk) {
-				chunks.push(chunk);
 			});
+		})
+		req.end();
+	}
+	if (message.content === `${prefix}help`) {
+		const help = new Discord.MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle('Commands')
+			.addField(`Pizza`, `${prefix}pizza (be sure to include it before the number)\n ${prefix}code`)
+			.addField(`Burger`, `${prefix}burger \n ${prefix}burger menu \n ${prefix}burger (number 1 to 41)`)
+			.addField(`Music`, `${prefix}play \n ${prefix}loop \n ${prefix}stop`)
+			.addField(`Moderation`, `${prefix}kick \n ${prefix}ban \n ${prefix}delete`)
+			.addField(`Food`, `${prefix}meal \n ${prefix}pasta \n ${prefix}seafood \n  ${prefix}breakfast \n  ${prefix}vegan \n  ${prefix}dessert \n  ${prefix}side \n  ${prefix}beef \n  ${prefix}pork \n  ${prefix}goat \n  ${prefix}lamb \n ${prefix}misc`)
+			.addField(`Everything else`, `${prefix}speech \n ${prefix}quote \n ${prefix}obamafact \n ${prefix}recipe \n ${prefix}bread \n ${prefix}cheese`)
+		message.channel.send(help)
+	}
 
+	if (message.content === `${prefix}meal`) mealDB()
+	if (message.content === `${prefix}pasta`) Pasta()
+	if (message.content === `${prefix}seafood`) Seafood()
+	if (message.content === `${prefix}breakfast`) Breakfast()
+	if (message.content === `${prefix}vegan`) Vegan()
+	if (message.content === `${prefix}dessert`) Dessert()
+	if (message.content === `${prefix}side`) Side()
+	if (message.content === `${prefix}misc`) Misc()
+	if (message.content === `${prefix}beef`) Beef()
+	if (message.content === `${prefix}pork`) Pork()
+	if (message.content === `${prefix}lamb`) Lamb()
+	if (message.content === `${prefix}goat`) Goat()
+	var timer = 0;
+	var link;
+	var nail;
+	function mealDB() {
+		var http = require("https");
+		var options = {
+			"method": "GET",
+			"hostname": "themealdb.com",
+			"port": null,
+			"path": "/api/json/v1/1/random.php"
+		};
+		var req = http.request(options, function (res) {
+			var chunks = [];
+			res.on("data", function (chunk) { chunks.push(chunk) });
 			res.on("end", function () {
 				var bod = Buffer.concat(chunks);
 				const body = bod.toString();
@@ -1623,20 +1579,17 @@ message.delete();
 				getNail(body)
 				getDesc(body)
 				getLink(body)
-				//console.log(body)
+				checkL(description);
 			});
 		})
 		req.end();
 	}
-	if (message.content === `${prefix}meal`) mealDB()
-	if (message.content === `a`) spaghetti()
 	function checkL(description) {
-		if (description.length >= 1024) {
+		if (description.length >= 2048) {
 			return mealDB();
 		} else { short = true;}
 		if (short) { sendResult(); }
-    }
-
+	}
 	function getDesc(body) {
 		var pos1 = body.search("strInstructions");
 		var pos2 = body.search("strMealThumb");
@@ -1647,11 +1600,7 @@ message.delete();
 		var datal = data2.length - 3;
 		description = data2.substring(datal, -3)
 		//console.log(description)
-		checkL(description);
 	}
-	var gurl;
-	var sttart;
-	var link;
 	function getName(body) {
 		var pos1 = body.search("strMeal");
 		var pos2 = body.search("strDrinkAlternate");
@@ -1668,9 +1617,11 @@ message.delete();
 		var data2 = data1.substring(15)
 		var datal = data2.length - 3;
 		var furl = data2.substring(datal, -3)
-		gurl = furl.substr(14, furl.length)	
-		sttart = 'https://';
-		var snurl = sttart.concat(gurl);
+		var sttart = 'https://';
+		var gurl = furl.substr(14, furl.length)	
+		nail = sttart.concat(gurl);
+		// download
+
 	}
 	function getLink(body) {
 		var pos1 = body.search("strSource");
@@ -1681,34 +1632,183 @@ message.delete();
 		 link = data2.substring(datal, -3)
 
 	}
-
-	function sendResult() {
-		const request = require('request'); //depricated !
-		const fs = require('fs');
-		const directory = "assets/";
-		var download = function (url, filename, callback) {
-			request.head(url, function (err, res, body) {
-				request(url).pipe(fs.createWriteStream(filename)).on('close', callback);
-			});
-		};
-		download(sttart.concat(gurl), directory + 'oddysee.jpg', function () {
+	async function sendResult() {
+		await download(nail, directory + 'oddysee.jpg', function () {
 			console.log('image downloaded');
+			let boxart_url = "assets/oddysee.jpg"; // locally
+			const filename = boxart_url.substring(boxart_url.lastIndexOf('/') + 1);
+			const file = new Discord.MessageAttachment(boxart_url);
+			const IP = `66.27.178.110`;
+			const ddeddd = new Discord.MessageEmbed()
+				.setThumbnail('attachment://' + filename)
+				.setColor('#0099ff')
+				.setTitle(name)
+				.setDescription(description)
+				.addField('Link', `${link}`)
+				.setTimestamp();
+			message.channel.send({ files: [file], embed: ddeddd });
+			short = false;
+			console.log(nail)
+		})
+	}
+
+	function Pasta() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Pasta` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
 		});
-		let boxart_url = "assets/oddysee.jpg"; // locally
-		const filename = boxart_url.substring(boxart_url.lastIndexOf('/') + 1);
-		const file = new Discord.MessageAttachment(boxart_url);
-		const IP = `66.27.178.110`
-		const ddeddd = new Discord.MessageEmbed()
-			.setColor('#0099ff')
-			.setTitle('Your Random Meal')
-			.addField(name, description)
-			.setThumbnail('attachment://' + filename)
-			.addField('Link', `${link}`)
-			.setTimestamp()
-		console.log(sttart.concat(gurl))
-		console.log(ddeddd)
-		message.channel.send({ files: [file], embed: ddeddd });
-		short = false;
+		req.end();
+	}
+	function Beef() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Beef` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Pork() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Pork` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Goat() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Goat` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Lamb() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Lamb` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Misc() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Miscellaneous` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Side() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Side` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Dessert() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Dessert` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Vegan() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Vegan` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Seafood() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Seafood` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	function Breakfast() {
+		var http = require("https"); var options = { "method": "GET", "hostname": "themealdb.com", "port": null, "path": `/api/json/v1/1/filter.php?c=Breakfast` };
+		var req = http.request(options, function (res) {
+			var chunks = []; res.on("data", function (chunk) { chunks.push(chunk) });
+			res.on("end", function () {
+				var bod = Buffer.concat(chunks); const bad = bod.toString(); var bong = bad.split('},'); var choice = Math.floor(Math.random() * bong.length); var body = bong[choice];
+				getNameC(body); getNailC(body); sendResultC();
+			});
+		});
+		req.end();
+	}
+	async function sendResultC() {
+		await download(nail, directory + 'oddysee.jpg', function () {
+			console.log('image downloaded');
+			let boxart_url = "assets/oddysee.jpg"; // locally
+			const filename = boxart_url.substring(boxart_url.lastIndexOf('/') + 1);
+			const file = new Discord.MessageAttachment(boxart_url);
+			const IP = `66.27.178.110`;
+			const ddeddd = new Discord.MessageEmbed()
+				.setImage('attachment://' + filename)
+				.setColor('#0099ff')
+				.setTitle(name)
+				.setTimestamp()
+			message.channel.send({ files: [file], embed: ddeddd });
+			short = false;
+			console.log(nail)
+		})
+	}
+	function getNameC(body) {
+		var pos1 = body.search("strMeal");
+		var pos2 = body.search("strMealThumb");
+		var data1 = body.substring(pos1, pos2)
+		var data2 = data1.substring(10)
+		var datal = data2.length - 3;
+		name = data2.substring(datal, -3)
+		//console.log(name)
+	}
+	function getNailC(body) {
+		var pos1 = body.search("strMealThumb");
+		var pos2 = body.search("idMeal");
+		var data1 = body.substring(pos1, pos2)
+		var data2 = data1.substring(15)
+		var datal = data2.length - 3;
+		var furl = data2.substring(datal, -3)
+		var sttart = 'https://';
+		var gurl = furl.substr(14, furl.length)
+		nail = sttart.concat(gurl);
 	}
 
 }
