@@ -3,6 +3,10 @@
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "stop": "pm2 stop all"
   },
+  "script": {
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "stop": "pm2 stop all"
+  },
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
