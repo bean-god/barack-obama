@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "pm2 start index.js --exp-backoff-restart-delay=10",
+    "stop": "pmw stop all"
+  },
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
