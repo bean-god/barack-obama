@@ -6,8 +6,6 @@ const colon = ':';
 //const app = express();
 var anger = 0;
 var reset = 0;
-<<<<<<< HEAD
-=======
 var peepeepoopoo;
 function pwait(iMilliSeconds) {
     var counter= 0
@@ -28,7 +26,7 @@ var codeChoice1 = 0;
 var codeChoice2 = 0;
 var codeChoice3 = 0;
 var codeChoice4 = 0;
-var finalstats = { health: `${health}`, damage: `${damage}`, speed: `${speed}` };
+var finalstats = { health: `${health}`, damage: `${damage}`, speed: `${speed}` }; 
 var health = 4;// -= damage
 var damage = 2;// -= health
 var speed = 1;// determines who attacks first
@@ -40,7 +38,6 @@ var sandwich = false;
 var sent = `${message}`;
 const words = sent.split(' ');
 var element = words[2];
->>>>>>> parent of 50f1d4e... as
 var grams;
 var moles;
 var atoms;
@@ -467,7 +464,7 @@ function obama() {
 		message.channel.send(help)
 	}
 
-=======
+
 /*
 function warning() {
 if(anger == 0){
@@ -1711,6 +1708,5 @@ message.delete();
 		message.channel.send({ files: [file], embed: ddeddd });
 		short = false;
 	}
->>>>>>> parent of 50f1d4e... as
 
 }
