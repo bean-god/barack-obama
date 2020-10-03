@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "pm2 start index.js --exp-backoff-restart-delay=10",
-    "stop": "pmw stop all"
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "stop": "pm2 stop all"
   },
   "requires": true,
   "lockfileVersion": 1,
