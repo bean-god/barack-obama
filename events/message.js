@@ -453,7 +453,6 @@ function obama() {
 }
 }
 
-<<<<<<< HEAD
 	if (message.content === `${prefix}help`) {
 		const help = new Discord.MessageEmbed()
 			.setColor('#0099ff')
