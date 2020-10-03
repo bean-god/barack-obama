@@ -225,9 +225,9 @@
       "version": "5.0.1"
     },
     "ffmpeg": "0.0.4",
+    "pm2": "4.5.0",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
-    "forever": "^3.0.2",
     "fs": "0.0.1-security",
     "fs-minipass": {
       "integrity": "sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==",
@@ -556,7 +556,6 @@
       "resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
       "version": "1.0.1"
     },
-    "pm2": "^4.5.0",
     "prebuild-install": "^5.3.5",
     "prism-media": {
       "integrity": "sha512-I+nkWY212lJ500jLe4tN9tWO7nRiBAVdMv76P9kffZjYhw20raMlW1HSSvS+MLXC9MmbNZCazMrAr+5jEEgTuw==",
@@ -739,7 +738,6 @@
     "ytsr": "^1.0.3"
   },
   "scripts": {
-    "test": "pm2 start index.js --exp-backoff-restart-delay=100",
-    "stop": "pm2 stop all"
+    "test": "pm2 start index.js"
   }
 }
