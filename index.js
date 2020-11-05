@@ -98,16 +98,15 @@ client.on("message", message => {
     if (!args1) {return message.channel.send(`Command: \n ${prefix}search (video search)`)}
     let filter;
     ytsr.getFilters('github').then(async filters1 => {
-        console.log(args1)
-        const filters2 = await ytsr.getFilters(args1);
+        filter1 = filters.get('Type').find(o => o.name === 'Video');
+        const filters2 = await ytsr.getFilters(filter.ref);
         filter2 = filters2.get('Duration').find(o => o.name.startsWith('Short'));
-        filter1 = filters2.get('Type').find(o => o.name === 'Video');
         const options = {
             limit: 5,
-            safeSearch: false,
             nextpageRef: filter2.ref,
         }
         const searchResults = await ytsr(null, options);
+        dosth(searchResults);
         message.channel.send(`Reply with 1 to 5 (video results)`)
         const d = new Discord.MessageEmbed()
             .setColor(`#0099ff`)

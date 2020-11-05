@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "start": "pm2-runtime start ecosystem.config.js --env production",
-    "stop": "pm2 stop all"
+    "test": "pm2 start index.js"
   },
   "script": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
@@ -215,7 +214,7 @@
       "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-1.0.3.tgz",
       "version": "1.0.3"
     },
-    "discord.js": "^12.3.1",
+    "discord.js": "^12.4.1",
     "dotenv": {
       "integrity": "sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==",
       "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz",
@@ -233,7 +232,6 @@
       "version": "5.0.1"
     },
     "ffmpeg": "0.0.4",
-    "pm2": "4.5.0",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
     "fs": "0.0.1-security",
@@ -471,7 +469,7 @@
       "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz",
       "version": "2.6.1"
     },
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.6",
     "nopt": {
       "integrity": "sha512-CvaGwVMztSMJLOeXPrez7fyfObdZqNUK1cPAEzLHrTybIua9pMdmmPR5YwtfNftIOMv3DPUhFaxsZMNTQO20Kg==",
       "requires": {
@@ -525,7 +523,7 @@
       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
       "version": "4.1.1"
     },
-    "on-change": "^2.1.2",
+    "on-change": "^2.2.0",
     "once": {
       "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
       "requires": {
@@ -564,7 +562,8 @@
       "resolved": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
       "version": "1.0.1"
     },
-    "prebuild-install": "^5.3.5",
+    "pm2": "4.5.0",
+    "prebuild-install": "^5.3.6",
     "prism-media": {
       "integrity": "sha512-I+nkWY212lJ500jLe4tN9tWO7nRiBAVdMv76P9kffZjYhw20raMlW1HSSvS+MLXC9MmbNZCazMrAr+5jEEgTuw==",
       "resolved": "https://registry.npmjs.org/prism-media/-/prism-media-1.2.2.tgz",
@@ -742,10 +741,7 @@
       "version": "4.0.0"
     },
     "youtube-search": "^1.1.4",
-    "ytdl-core": "^3.2.2",
-    "ytsr": "^1.0.3"
-  },
-  "scripts": {
-    "test": "pm2 start index.js"
+    "ytdl-core": "^3.4.2",
+    "ytsr": "^1.0.4"
   }
 }
